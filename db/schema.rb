@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20170417075605) do
     t.datetime "updated_at",                             null: false
     t.boolean  "manager",                default: false
     t.string   "name"
+    t.integer  "rank"
     t.string   "photo"
     t.boolean  "avaiable",               default: true
-    t.integer  "rank"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
