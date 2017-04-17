@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20170417075605) do
   create_table "leads", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "recieved_at"
-    t.string   "accepted_at"
+    t.datetime "recieved_at"
+    t.datetime "accepted_at"
     t.string   "status"
     t.string   "source"
     t.integer  "user_id"
