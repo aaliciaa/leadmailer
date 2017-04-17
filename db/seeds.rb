@@ -8,6 +8,9 @@
 
 require 'faker'
 
+User.destroy_all
+Lead.destroy_all
+
 10.times do
   name = Faker::Name.name
   new_user = User.new(
