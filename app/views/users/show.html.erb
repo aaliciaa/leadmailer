@@ -1,0 +1,27 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<h1> USER DETAILS - sidebar content </h1>
+
+<%= image_tag @user.photo %>
+
+<p>Name: <%= @user.name %></p>
+
+<p>Available? <%= @user.available %></p>
+
+<%= link_to 'Availability', toggle_availability_user_path(@user), method: :patch, class: "btn btn-primary" %>
+
+<p> Conversion Rate: Calculate user.leads.count / user.settled.count * 100 %</p>
+
+<p> You are ranked <%= @user.rank %> / <%= User.count %>
+
+<h1> LEAD DETAILS - table content </h1>
+
+<% @leads.each do |lead| %>
+ <p>Contact Name: <%= lead.name %></p>
+ <p>Contact Email: <%= lead.email %></p>
+ <p>Lead Status: <%= lead.status.capitalize %></p>
+ <p>Lead Source: <%= lead.source %></p>
+ <p>Saleperson: <%= lead.user ? lead.user.name : "" %></p>
+ <p>Lead Generated: <%= lead.created_at %></p>
+<% end %>
