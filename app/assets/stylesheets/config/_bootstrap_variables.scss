@@ -9,11 +9,13 @@ $body-bg:                 white;
 $font-size-base:          $base-size;
 $line-height-base:        $base-height;
 $headings-font-family:    $header-font;
+// $h1-light:
+// $h1-dark:
 
 // Semantic color scheme
 // => http://getbootstrap.com/customize/#colors
 $gray-base:       $gray;
-$brand-primary:   $blue;
+$brand-primary:   #53b8e9;
 $brand-success:   $green;
 $brand-info:      $yellow;
 $brand-danger:    $red;
