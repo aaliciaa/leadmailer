@@ -26,7 +26,7 @@ Lead.destroy_all
       name: lead_name,
       email: Faker::Internet.email(lead_name),
       recieved_at: Time.now(),
-      status: "unaccepted",
+      status: "pending",
       user: new_user,
       source: ["Car Kijiji", "Truck Sales", "Alibaba"].sample
       )
