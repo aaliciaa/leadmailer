@@ -25,8 +25,12 @@ class LeadsController < ApplicationController
   end
 
   def update
-    Lead.create(lead_params)
-    redirect_to leads_path(@lead)
+    @lead.update(lead_params)
+    if @lead.save
+      redirect_to leads_path
+    else
+      render :new
+    end
   end
 
   def destroy
