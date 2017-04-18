@@ -29,6 +29,7 @@ class UsersController < ApplicationController
 
   def show
     # find, as above
+    @leads = @user.leads
   end
 
 
