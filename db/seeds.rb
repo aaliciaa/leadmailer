@@ -11,6 +11,21 @@ require 'faker'
 User.destroy_all
 Lead.destroy_all
 
+alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", password: "123456", photo: "http://placehold.it/350x150", rank: 2)
+
+  1.times do
+    lead_name = "Biz Metzler"
+    lead = Lead.new(
+      name: lead_name,
+      email: Faker::Internet.email(lead_name),
+      received_at: Time.now(),
+      status: "pending",
+      user: alicia,
+      source: ["Car Kijiji", "Truck Sales", "Alibaba"].sample
+      )
+    lead.save!
+  end
+
 10.times do
   name = Faker::Name.name
   new_user = User.new(
@@ -25,7 +40,7 @@ Lead.destroy_all
     lead = Lead.new(
       name: lead_name,
       email: Faker::Internet.email(lead_name),
-      recieved_at: Time.now(),
+      received_at: Time.now(),
       status: "pending",
       user: new_user,
       source: ["Car Kijiji", "Truck Sales", "Alibaba"].sample
@@ -34,3 +49,4 @@ Lead.destroy_all
   end
   puts "lead created!"
 end
+
