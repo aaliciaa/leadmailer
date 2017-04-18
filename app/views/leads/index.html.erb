@@ -1,6 +1,44 @@
-<%= @leads.each do |lead| %>
-  <p><%= lead.user.name %></p>
-  <p><%= lead.received_at %></p>
-  <p><%= lead.name %></p>
-  <p><%= lead.email %></p>
+
+<h1>Leads#index</h1>
+<p>Find me in app/views/leads/index.html.erb</p>
+
+
+<!-- Manually Create Lead -->
+<%= link_to "Add Lead", new_lead_path, class: "btn btn-primary" %>
+
+<!-- @leads = Lead.all -->
+<% @leads.each do |lead| %>
+  <p>Contact Name: <%= lead.name %></p>
+  <p>Contact Email: <%= lead.email %></p>
+  <p>Lead Status: <%= lead.status.capitalize %></p>
+  <p>Lead Source: <%= lead.source %></p>
+  <p>Saleperson: <%= lead.user ? lead.user.name : "" %></p>
+  <p>Lead Generated: <%= lead.created_at %></p>
+  <hr>
 <% end %>
+
+<!-- use this for the table formatting: -->
+<!-- <table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Boris</td>
+      <td>Paillard</td>
+    </tr>
+    [...]
+  </tbody>
+</table> -->
+
+<!-- Stats -->
+<!-- @leads.user -> returns array of salespeople: all leads -->
+  <!-- Total Leads this week -->
+   <!--    Leads = Lead.where(created_at: > Date.yeserday()).count -->
+  <!-- Highest Salesperon -->
+  <!-- Conversion Rate -->
+  <!-- Average Response time -->
+

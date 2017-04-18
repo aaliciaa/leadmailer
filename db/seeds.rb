@@ -49,3 +49,4 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
   end
   puts "lead created!"
 end
+

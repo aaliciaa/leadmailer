@@ -10,9 +10,12 @@ class LeadsController < ApplicationController
   end
 
   def create
-    @lead = Lead.create(lead_params)
+    @lead = Lead.new(lead_params)
+    @lead.received_at = DateTime.now()
+    @lead.status = "pending"
+    @lead.source = @lead.source.strip
     if @lead.save
-      redirect_to lead_path(@lead)
+      redirect_to leads_path
     else
       render :new
     end
