@@ -3,7 +3,7 @@ class CreateLeads < ActiveRecord::Migration[5.0]
     create_table :leads do |t|
       t.string :name
       t.string :email
-      t.datetime :recieved_at
+      t.datetime :received_at
       t.datetime :accepted_at
       t.string :status
       t.string :source
