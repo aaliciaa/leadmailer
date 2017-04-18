@@ -11,7 +11,7 @@ require 'faker'
 User.destroy_all
 Lead.destroy_all
 
-alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", password: "123456", photo: "http://placehold.it/350x150", rank: 2)
+alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", password: "123456", photo: "http://placehold.it/350x350", rank: 2)
 
   1.times do
     lead_name = "Biz Metzler"
