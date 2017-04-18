@@ -1,8 +1,25 @@
-<div class=wrapper>
-  <% @users.each do |user| %>
-    <p><%= user.rank %></p>
-    <p><%= user.name %></p>
-    <p><%= user.email %></p>
-    <p><%= user.available %></p>
-  <% end %>
+<div class="wrapper">
+  <div class="">
+
+    <table style="width:100%">
+
+    <tr class="table-header">
+      <th>Ranking</th>
+      <th>Salesperson</th>
+      <th>Email</th>
+      <th>Unavailable</th>
+      <th>Delete User</th>
+    </tr>
+
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.rank %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.available %></td>
+      <td>X</td>
+    <% end %>
+    </tr>
+
+  </div>
 </div>
