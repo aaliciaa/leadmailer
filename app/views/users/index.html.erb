@@ -1,9 +1,9 @@
 <div>
 
   <!-- div for the add lead button and view window -->
-  <div class="main-view-window">
+  <div class="table-wrapper bg-light-grey">
     <!-- Button to add new lead -->
-    <div class="user-button">
+    <div class="pull-right">
       <%= link_to "Add Lead", new_lead_path, class: "btn btn-primary" %>
     </div>
 
@@ -12,7 +12,7 @@
 
         <table class="user-table" style="width:100%">
 
-        <tr class="table-header">
+        <tr class="table-header bg-grey light-font">
           <th class="pad-left-plz">Ranking</th>
           <th class="user-th">Salesperson</th>
           <th class="user-th">Email</th>
