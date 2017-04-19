@@ -1,6 +1,14 @@
+html {
+      height:100%;
+    }
+    body {
+      height:100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+
 .table-header {
-  background-color: #252525;
-  color: #FFFFFE;
   text-align: left;
 }
 
@@ -21,7 +29,7 @@
 }
 
 .alert {
-  background-color: #E4E4E3;
+  background-color: $lightgrey;
 }
 
 .user-td {
@@ -34,15 +42,10 @@
 }
 
 .user-table {
-  background-color: #FFFFFE;
+  background-color: #FFFFFF;
 }
 
-.user-button {
-  float: right;
-}
-
-.main-view-window {
-  background-color: #E4E4E3;
+.table-wrapper {
   height: 82vh;
 }
 
@@ -50,4 +53,8 @@
   overflow:hidden;
     overflow-y: scroll;
     height: 600px;
+}
+
+.sidebar-left {
+  background-color: #FFFFFF;
 }
