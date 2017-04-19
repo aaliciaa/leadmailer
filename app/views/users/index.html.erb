@@ -13,7 +13,7 @@
         <table class="user-table" style="width:100%">
 
         <tr class="table-header">
-          <th class="user-th">Ranking</th>
+          <th class="pad-left-plz">Ranking</th>
           <th class="user-th">Salesperson</th>
           <th class="user-th">Email</th>
           <th class="user-th">Unavailable</th>
@@ -22,11 +22,11 @@
 
         <% @users.each do |user| %>
         <tr class="user-tr">
-          <td class="user-td"><%= user.rank %></td>
+          <td class="pad-left-plz"><%= user.rank %></td>
           <td class="user-td"><%= user.name %></td>
           <td class="user-td"><%= user.email %></td>
-          <td class="user-td"><%= user.available %></td>
-          <td class="user-td">X</td>
+          <td class="pad-right-plz"><%= user.available %></td>
+          <td class="pad-right-plz">X</td>
         <% end %>
         </tr>
         </table>
