@@ -12,8 +12,15 @@
   <p>Contact Email: <%= lead.email %></p>
   <p>Lead Status: <%= lead.status.capitalize %></p>
   <p>Lead Source: <%= lead.source %></p>
-  <p>Saleperson: <%= lead.user ? lead.user.name : "" %></p>
+  <p>Saleperson: <%= link_to lead.user.name, user_path(lead.user) %></p>
   <p>Lead Generated: <%= lead.created_at %></p>
+  <%= link_to "Accept Lead", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary" %>
+  <%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "btn btn-primary" %>
+  <%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "btn btn-primary" %>
+  <%= link_to "Edit", edit_lead_path(lead), class: "btn btn-primary" %>
+  <%= link_to "Delete", lead_path(lead),
+      method: :delete,
+      data: { confirm: "Are you sure you want to Delete this lead?" } %>
   <hr>
 <% end %>
 
