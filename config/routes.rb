@@ -15,9 +15,8 @@ Rails.application.routes.draw do
     end
   end
 
+  # static pages
 
-  # patch "leads/:id", to: "leads#mark_as_settled", as: "mark_settled"
-  # patch "leads/:id", to: "leads#mark_as_lost", as: "mark_lost"
+  get 'styleguide', to: 'pages#styleguide'
 
-  # patch "users/:id", to: "users#toogle_availability", as: "toggle_availability"
 end

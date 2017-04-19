@@ -3,4 +3,10 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def styleguide
+  @base_font   = "Open Sans"
+  @header_font = "Raleway"
+  end
+
 end
