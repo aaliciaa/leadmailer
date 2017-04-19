@@ -46,4 +46,8 @@
   height: 82vh;
 }
 
-
+.scroll-me {
+  overflow:hidden;
+    overflow-y: scroll;
+    height: 600px;
+}
