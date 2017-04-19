@@ -32,15 +32,30 @@
 }
 
 .table-wrapper {
-  height: 82vh;
+  height: 85vh;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
 }
 
 .scroll-me {
   overflow:hidden;
     overflow-y: scroll;
-    height: 600px;
+    height: 700px;
 }
 
-.sidebar-left {
-  background-color: #FFFFFF;
-}
+// .sidebar {
+//   background-color: #FFFFFF;
+//   position: fixed;
+//   top: 51px;
+//   bottom: 0;
+//   left: 0;
+//   z-index: 1000;
+//   display: block;
+//   padding: 20px;
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   border-right: 1px solid #eee;
+// }
+

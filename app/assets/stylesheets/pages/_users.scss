@@ -1,0 +1,10 @@
+.main-wrapper {
+  display: flex;
+  .sidebar {
+    flex: 0 0 15%;
+    background-color: white;
+  }
+  .main-content {
+    flex: 1 0 85%;
+  }
+}
