@@ -24,6 +24,24 @@
   width: 100px;
 }
 
+.navbar-wagon-left {
+  height: 100%;
+  flex: 0 1 35%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  ul.navbar-buttons {
+    margin-bottom: 5px;
+    align-self: flex-end;
+    li {
+      margin: 0 5px;
+      a {
+        padding-bottom: 4px;
+      }
+    }
+  }
+}
+
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;
@@ -63,17 +81,6 @@
 .nav-links-active {
   border-bottom: solid 5px $brand-primary;
 }
-
-#staff-link {
-  position: absolute;
-  left: 200px;
-}
-
-#lead-link {
-  position: absolute;
-  left: 300px;
-}
-
 
 /* Navbar right button */
 .navbar-wagon-button {
