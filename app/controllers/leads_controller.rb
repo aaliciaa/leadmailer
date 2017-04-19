@@ -40,6 +40,7 @@ class LeadsController < ApplicationController
 
   def mark_as_accepted
     @lead.accepted_at = DateTime.now
+    # @lead.response_time = @lead.accepted_at - @lead.created_at
     @lead.response_time = @lead.accepted_at - @lead.created_at
     @lead.status = "accepted"
     @lead.save
