@@ -13,8 +13,6 @@
     <%= render 'shared/flashes' %>
     <% unless action_name == "home" %>
       <%= render 'shared/navbar'  %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <% end %>
     <div class="main">
       <%= yield %>
