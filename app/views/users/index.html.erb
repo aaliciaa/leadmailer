@@ -1,16 +1,24 @@
 <!-- User index page -->
 
-<div>
+<div class="lead-wrapper">
+  <div class="row">
+  <div class="col-xs-2">
+    <div class="sidebar-left">
+
+    </div>
+    </div>
 
   <!-- div for the add lead button and view window -->
   <div class="table-wrapper bg-light-grey">
+  <div class="col-xs-10">
+
     <!-- Button to add new lead -->
     <div class="pull-right">
       <%= link_to "Add Lead", new_lead_path, class: "btn btn-primary" %>
     </div>
 
     <!-- Main table of employees -->
-    <div class="wrapper">
+
 
         <table class="user-table" style="width:100%">
 
@@ -33,6 +41,8 @@
         </tr>
         </table>
 
-    </div>
+
+  </div>
+  </div>
   </div>
 </div>
