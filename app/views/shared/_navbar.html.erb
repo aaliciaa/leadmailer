@@ -1,16 +1,21 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
-  <% end %>
+
+  <div class="navbar-wagon-left">
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo.png" %>
+    <% end %>
+
+    <ul class="list-inline navbar-buttons">
+      <li><%= link_to "STAFF", users_path, class: "nav-links #{set_users_active_button}", id: "staff-link" %> </li>
+      <li><%= link_to "LEADS", leads_path, class: "nav-links #{set_leads_active_button}", id: "lead-link" %> </li>
+    </ul>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-<ul class="list-inline">
-<li> <%= link_to "STAFF", users_path, class: "nav-links nav-links-active", id: "staff-link" %> </li>
-<li> <%= link_to "LEADS", leads_path, class: "nav-links", id: "lead-link" %> </li>
-</ul>
+
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
