@@ -1,23 +1,44 @@
-<!-- Manually Create Lead -->
-<%= link_to "Add Lead", new_lead_path, class: "btn btn-primary" %>
+<div class="main-view-window">
 
-<!-- @leads = Lead.all -->
-<% @leads.each do |lead| %>
-  <p>Contact Name: <%= lead.name %></p>
-  <p>Contact Email: <%= lead.email %></p>
-  <p>Lead Status: <%= lead.status.capitalize %></p>
-  <p>Lead Source: <%= lead.source %></p>
-  <p>Saleperson: <%= link_to lead.user.name, user_path(lead.user) %></p>
-  <p>Lead Generated: <%= lead.created_at %></p>
-  <%= link_to "Accept Lead", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary" %>
-  <%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "btn btn-primary" %>
-  <%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "btn btn-primary" %>
-  <%= link_to "Edit", edit_lead_path(lead), class: "btn btn-primary" %>
-  <%= link_to "Delete", lead_path(lead),
-      method: :delete,
-      data: { confirm: "Are you sure you want to Delete this lead?" } %>
-  <hr>
-<% end %>
+  <!-- Manually Create Lead -->
+  <%= link_to "Add Lead", new_lead_path, class: "btn btn-primary" %>
+
+  <!-- Table setup -Chris -->
+
+  <div class="wrapper">
+  <div class="scroll-me">
+
+    <table class="user-table" style="width:100%">
+
+    <tr class="table-header">
+      <th class="user-th">Saleperson</th>
+      <th class="user-th">Lead Generated</th>
+      <th class="user-th">Contact Name:</th>
+      <th class="user-th">Contact Email:</th>
+      <th class="user-th">Lead Source</th>
+    </tr>
+
+    <% @leads.each do |lead| %>
+    <tr class="user-tr">
+      <td class="user-td"><%= link_to lead.user.name, user_path(lead.user) %></td>
+      <td class="user-td"><%= lead.created_at %></td>
+      <td class="user-td"><%= lead.name %></td>
+      <td class="user-td"><%= lead.email %></td>
+      <td class="user-td"><%= lead.source %></td>
+    </tr>
+    <% end %>
+    </table>
+
+  </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 
 <!-- use this for the table formatting: -->
 <!-- <table>
