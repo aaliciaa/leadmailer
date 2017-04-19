@@ -50,5 +50,28 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
     lead.save!
   end
   puts "lead created!"
+
+  accepted_leads = []
+
+  20.times do
+    lead = Lead.all.sample
+    lead.accepted_at = DateTime.now
+    lead.response_time = lead.accepted_at - lead.created_at
+    lead.status = "accepted"
+    lead.save
+    accepted_leads << lead
+  end
+
+  10.times do
+    lead = accepted_leads.sample
+    lead.status = "settled"
+    lead.save
+  end
+
+  10.times do
+    lead = accepted_leads.sample
+    lead.status = "lost"
+    lead.save
+  end
 end
 
