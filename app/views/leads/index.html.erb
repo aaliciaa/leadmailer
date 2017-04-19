@@ -51,10 +51,18 @@
 
 
 <!-- Stats -->
-<!-- @leads.user -> returns array of salespeople: all leads -->
-  <!-- Total Leads this week -->
-   <!--    Leads = Lead.where(created_at: > Date.yeserday()).count -->
-  <!-- Highest Salesperon -->
-  <!-- Conversion Rate -->
-  <!-- Average Response time -->
 
+  <!-- Conversion Rate -->
+  <p>Conversion Rate: <%= conversion_rate_for(@leads.where(status: "settled"), @leads) %> %</p>
+  <!-- Avg Response Time -->
+  <p>Avg Response Time: <%= Lead.average(:response_time).round %> seconds</p>
+  <!-- Total Leads this week -->
+  <p>Total Leads this week: <%= count_leads_since(DateTime.yesterday) %> leads this week!</p>
+  <!-- Highest Salesperon -->
+  <p>SalesPerson Ranking: <%= calculate_ranking(User) %> is First!!</p>
+  <!-- User Response time -->
+  <p>User AVG Response Time: <%= User.first.leads.average(:response_time).round %> seconds</p>
+  <!-- Leads from each Source -->
+  <p>Leads from Truck Sales: <%= @leads.where(source: "Truck Sales").count %> leads</p>
+  <!-- Lead generated ... ago -->
+  <p>Lead generated... <%= time_ago_in_words(User.first.leads.first.created_at) %> ago</p>
