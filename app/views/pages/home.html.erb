@@ -1,26 +1,13 @@
   <!-- Banner code -->
 <div class="banner-wrapper">
-  <div class="banner banner-gradient" id="banner-gradient" style="background-image: linear-gradient(to right, rgba(142, 158, 171, 0.3) 0%, rgba(238, 242, 243, 0.1) 0%), url('<%= image_path "banner.jpg" %>');">
+  <div class="banner banner-gradient" id="banner-gradient" style="background-image: url('<%= image_path "banner.jpg" %>');">
   <%= image_tag "home-logo.png", alt: "logo", class: "banner-logo" %>
-  <div class="bg-grey banner-text">
+  <div class="banner-text">
     <h1 class="light-font">The Lead Distribution Solution<BR>
-  for Sales Teams.</h1>
+  for Brokers and Sales Teams.</h1>
   </div>
-</div>
-
-<!-- Call to action -->
-<div class="cta-wrapper bg-grey">
-  <!-- <div class="container"> -->
-    <div class="row">
-      <div class="col-md-4">
-        <h1 class="light-font pull-right"> Cut out the middle man with </h1>
-      </div>
-      <div class="col-md-4">
-        <%= image_tag "logo.png", alt: "logo", width: "200px" %>
-      </div>
-      <%= link_to 'Get started for free', new_user_session_path(@user), class: "btn btn-primary" %>
-    </div>
-  <!-- </div> -->
+    <%= link_to "Login", new_user_session_path, {class: "btn-transparent login"} %>
+    <%= link_to "Get started for FREE", new_user_session_path, {class: "btn btn-primary get-started"} %>
 </div>
 
 <!-- Do you have salesteam...etc -->
@@ -34,27 +21,27 @@
 and a sales team to distribute them to?</h1>
 <%= image_tag "blueline.png", alt: "blue line", width: "200px" %>
 <p>Set up your sales team and specifiy delivery rules with lead mailer and watch your ROI increase. We know speed of contact is critical so we’ve cut out the middle man.</p>
+<%= link_to "Get started", new_user_session_path, {class: "btn btn-primary pull-right"} %>
     </div>
   </div>
 </div>
 
 
 <!-- 3 x flip cards -->
-<div class="flip-wrapper bg-light-grey">
+<div class="flip-wrapper bg-blue">
+<h1 class="light-font"> Pricing Plans </h1>
   <div class="row">
     <div class="col-md-4">
-      <div class="wrapper">
-        <div class="col_third">
-          <div class="hover panel">
-            <div class="front">
-              <div class="box1">
-                <h1>Route.</h1>
-              </div>
+      <div class="col_third">
+        <div class="hover panel">
+          <div class="front">
+            <div class="box1">
+              <h1>Level 1</h1>
             </div>
-            <div class="back">
-              <div class="box2">
-                <p>Automatically distribute leads to your sales team round robin style, based on specified rules - sent directly to their inbox.</p>
-              </div>
+          </div>
+          <div class="back">
+            <div class="box2">
+              <p class="light-font">Automatically distribute leads to your sales team round robin style, based on specified rules - sent directly to their inbox.</p>
             </div>
           </div>
         </div>
@@ -62,18 +49,16 @@ and a sales team to distribute them to?</h1>
     </div>
 
 <div class="col-md-4">
-    <div class="wrapper">
-      <div class="col_third">
-        <div class="hover panel">
-          <div class="front">
-            <div class="box1">
-              <h1>Record.</h1>
-            </div>
+    <div class="col_third">
+      <div class="hover panel">
+        <div class="front">
+          <div class="box1">
+            <h1>Level 2</h1>
           </div>
-          <div class="back">
-            <div class="box2">
-              <p>Simple dashboard for each salesperson to view their leads and mark the outcome.</p>
-            </div>
+        </div>
+        <div class="back">
+          <div class="box2">
+            <p class="light-font">$49.99 per month</p>
           </div>
         </div>
       </div>
@@ -81,23 +66,20 @@ and a sales team to distribute them to?</h1>
   </div>
 
 <div class="col-md-4">
-    <div class="wrapper">
       <div class="col_third">
         <div class="hover panel">
           <div class="front">
             <div class="box1">
-              <h1>Report.</h1>
+              <h1>Level 3</h1>
             </div>
           </div>
           <div class="back">
             <div class="box2">
-              <p>Do less, know more with simple analytics for time poor business owners.
-    </p>
+              <p class="light-font">Do less, know more with simple analytics for time poor business owners.</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
   </div>
 </div>
