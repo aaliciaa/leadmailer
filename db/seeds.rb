@@ -21,7 +21,7 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
       received_at: Time.now(),
       status: "pending",
       user: alicia,
-      source: ["Car Kijiji", "Truck Sales", "Alibaba"].sample
+      source: ["Car Kijiji", "Truck Sales", "Alibaba"].sample,
       )
     lead.save!
   end
@@ -31,7 +31,9 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
   new_user = User.new(
     name: name,
     email: Faker::Internet.email(name),
-    password: "password"
+    password: "password",
+    photo: "http://placehold.it/350x350",
+    rank: 1
     )
   new_user.save!
   puts "User created!"

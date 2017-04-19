@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       patch :mark_as_settled
       patch :mark_as_lost
+      patch :mark_as_accepted
     end
   end
 
