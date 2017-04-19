@@ -14,11 +14,13 @@
 .bg-black {
   background: #4a4a4a;
 }
+
 .bg-grey {
-  background: #252525;
+  background: $darkgrey;
 }
+
 .bg-blue {
-  background: #00a3e1;
+  background: $brand-primary;
 }
 .bg-dark-blue {
   background: #3b5998;
@@ -26,6 +28,10 @@
 
 .bg-light-grey {
   background: $lightgrey;
+}
+
+.bg-grey-transparent {
+  background-color: rgba(37, 37, 37, 0.7);
 }
 
 .dark-font {
@@ -38,4 +44,17 @@
 
 .blue-font {
   color: $brand-primary;
+}
+
+// Headers
+
+h1 {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 31px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 500px;
 }

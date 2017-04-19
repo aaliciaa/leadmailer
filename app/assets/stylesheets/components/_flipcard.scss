@@ -1,5 +1,4 @@
 .flipcard-p { color: #ffffff;  }
-h1 { color: $darkgrey; font-size: 15px; }
 
 /*-=-=-=-=-=-=-=-=-=-*/
 /* Column Grids */
@@ -31,13 +30,11 @@ h1 { color: $darkgrey; font-size: 15px; }
 /* Flip Panel */
 /*-=-=-=-=-=-=-=-=-=-=- */
 
-.wrapper{ width: 980px; margin: 0 auto;  background-color: $lightgrey; hoverflow: hidden;}
-
 .panel {
   margin: 0 auto;
   height: 130px;
   position: relative;
-  background-color: $lightgrey;
+  background-color: $brand-primary;
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
 }

@@ -1,0 +1,15 @@
+.btn-transparent {
+  background-color: transparent;
+  color: $brand-primary;
+  border: 2px solid $brand-primary;
+  padding: 5px 20px 5px 20px;
+  border-radius: 2px;
+  transition: .2s ease;
+  text-decoration: none;
+}
+
+.btn-transparent:hover {
+  background-color: $brand-primary;
+  text-decoration: none;
+  color: #ffffff;
+}
