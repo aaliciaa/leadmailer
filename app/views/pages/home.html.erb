@@ -1,7 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+  <!-- Banner code -->
+<div class="banner-wrapper">
+  <div class="banner banner-gradient" id="banner-gradient" style="background-image: linear-gradient(to right, rgba(142, 158, 171, 0.3) 0%, rgba(238, 242, 243, 0.1) 0%), url('<%= image_path "banner.jpg" %>');">
+  <%= image_tag "home-logo.png", alt: "logo", class: "banner-logo" %>
+  <div class="bg-grey banner-text">
+    <h1 class="light-font">The Lead Distribution Solution<BR>
+  for Sales Teams.</h1>
+  </div>
+</div>
 
-<div class="container bg-light-grey">
+<!-- Call to action -->
+<div class="cta-wrapper bg-grey">
+  <!-- <div class="container"> -->
+    <div class="row">
+      <div class="col-md-4">
+        <h1 class="light-font pull-right"> Cut out the middle man with </h1>
+      </div>
+      <div class="col-md-4">
+        <%= image_tag "logo.png", alt: "logo", width: "200px" %>
+      </div>
+      <%= link_to 'Get started for free', new_user_session_path(@user), class: "btn btn-primary" %>
+    </div>
+  <!-- </div> -->
+</div>
+
+<!-- Do you have salesteam...etc -->
+<div class="salesteam-wrapper">
+  <div class="row">
+    <div class="col-md-5">
+    <%= image_tag "flow-chart.png", alt: "flow chart", width: "400px" %>
+    </div>
+    <div class="col-md-6">
+    <h1 class="pull-left">Do you have leads arriving by email,
+and a sales team to distribute them to?</h1>
+<%= image_tag "blueline.png", alt: "blue line", width: "200px" %>
+<p>Set up your sales team and specifiy delivery rules with lead mailer and watch your ROI increase. We know speed of contact is critical so we’ve cut out the middle man.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- 3 x flip cards -->
+<div class="flip-wrapper bg-light-grey">
   <div class="row">
     <div class="col-md-4">
       <div class="wrapper">

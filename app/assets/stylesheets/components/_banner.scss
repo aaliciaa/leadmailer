@@ -1,0 +1,32 @@
+/* Banner design */
+.banner {
+  color: white;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  h1 {
+    font-size: 30px;
+    font-weight: 500;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    line-height: 36px;
+    letter-spacing: 2px;
+    padding: 15px 60px 15px;
+    display: flex;
+    flex: 0 1 46%;
+    flex-direction: row;
+    flex-shrink: 1;
+    justify-content: flex-start;
+    background-color: #252525;
+    margin: -33;
+  }
+}
+
+.banner-logo {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  width: 200px;
+}
