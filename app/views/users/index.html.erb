@@ -57,9 +57,12 @@
                 <td class="pad-left-plz"><%= user.rank %></td>
                 <td class="user-td"><%= user.name %></td>
                 <td class="user-td"><%= user.email %></td>
-                <td class="pad-right-plz"><%= user.available %></td>
+                <td class="pad-right-plz">
+                <div class="checkbox">
 
-
+                <%= availability_status_for(user) %> (<%= link_to "Update status", toggle_availability_user_path(user), method: :patch%>)
+                </div>
+                </td>
 
 
                 <td class="pad-right-plz">
@@ -67,8 +70,6 @@
                   <i class="fa fa-times" aria-hidden="true"></i>
                   <% end %>
                 </td>
-
-
 
               <% end %>
               </tr>
@@ -80,6 +81,5 @@
     </div>
 
   </div>
-
 </div>
 
