@@ -2,6 +2,35 @@
 
 <div class="main-wrapper">
   <div class="sidebar">
+<div class="stats-wrapper">
+<h1>Campaign Overview</h1>
+  <div class="bg-grey stats">
+    <h2 class="light-font stat-header">Conversion Rate</h2>
+    <p class="stat-detail stat-number"><%= conversion_rate_for(@leads.where(status: "settled"), @leads) %>%</p>
+  </div>
+</div>
+
+<div class="stats-wrapper">
+  <div class="bg-grey stats">
+    <h2 class="light-font stat-header">Rank #1</h2>
+    <h2 class="stat-detail"><%= calculate_ranking(User) %> </h2>
+  </div>
+</div>
+
+<div class="stats-wrapper">
+  <div class="bg-grey stats">
+    <h2 class="light-font stat-header">Total Leads (this week)</h2>
+    <h2 class="stat-detail stat-number"><%= count_leads_since(DateTime.yesterday) %></h2>
+  </div>
+</div>
+
+<div class="stats-wrapper">
+  <div class="bg-grey stats">
+    <h2 class="light-font stat-header">Average Response Time</h2>
+    <p class="stat-detail"><%= Lead.average(:response_time).round %> seconds</p>
+  </div>
+</div>
+
   </div>
   <div class="main-content">
     <div class="container-fluid bg-light-grey">
@@ -10,12 +39,12 @@
         <div class="col-xs-12">
             <!-- Button to add new lead -->
           <div class="table-wrapper ">
-           <%= link_to "Add Lead", new_lead_path, class: "btn btn-primary add-lead-btn" %>
+           <%= link_to "Add Salesperson", new_user_path, class: "btn btn-primary add-lead-btn" %>
             <!-- Main table of employees -->
             <div class="scroll-me">
               <table class="user-table" style="width:100%">
 
-              <tr class="table-header bg-grey light-font">
+              <tr class="table-header-green bg-grey light-font">
                 <th class="pad-left-plz">Ranking</th>
                 <th class="user-th">Salesperson</th>
                 <th class="user-th">Email</th>
