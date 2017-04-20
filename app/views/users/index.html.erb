@@ -3,7 +3,7 @@
 <div class="main-wrapper">
   <div class="sidebar">
 <div class="stats-wrapper">
-<h1>Campaign Overview</h1>
+<h3>Campaign Overview</h3>
   <div class="bg-grey stats">
     <h2 class="light-font stat-header">Conversion Rate</h2>
     <p class="stat-detail stat-number"><%= conversion_rate_for(@leads.where(status: "settled"), @leads) %>%</p>
@@ -38,14 +38,14 @@
         <!-- div for the add lead button and view window -->
         <div class="col-xs-12">
             <!-- Button to add new lead -->
-          <div class="table-wrapper ">
+          <div class="table-wrapper">
            <%= link_to "Add Salesperson", new_user_path, class: "btn btn-primary add-lead-btn" %>
             <!-- Main table of employees -->
             <div class="scroll-me">
-              <table class="user-table" style="width:100%">
+              <table class="table table-striped" style="width:100%">
 
-              <tr class="table-header-green bg-grey light-font">
-                <th class="pad-left-plz">Ranking</th>
+              <tr class="bg-grey light-font" id="table-header-green">
+                <th class="pad-left-plz user-th">Ranking</th>
                 <th class="user-th">Salesperson</th>
                 <th class="user-th">Email</th>
                 <th class="user-th">Unavailable</th>

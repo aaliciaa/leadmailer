@@ -1,33 +1,51 @@
-<!-- Leads index page -->
-
-<div class="lead-wrapper">
-  <div class="row">
-  <div class="col-xs-2">
-    <div class="sidebar-left">
-
+<div class="main-wrapper">
+  <div class="sidebar">
+    <div class="stats-wrapper">
+    <h3>Campaign Overview</h3>
+      <div class="bg-grey stats">
+        <h2 class="light-font stat-header">Conversion Rate</h2>
+        <p class="stat-detail stat-number"><%= conversion_rate_for(@leads.where(status: "settled"), @leads) %>%</p>
+      </div>
     </div>
+
+    <div class="stats-wrapper">
+      <div class="bg-grey stats">
+        <h2 class="light-font stat-header">Rank #1</h2>
+        <h2 class="stat-detail"><%= calculate_ranking(User) %> </h2>
+      </div>
     </div>
 
+    <div class="stats-wrapper">
+      <div class="bg-grey stats">
+        <h2 class="light-font stat-header">Total Leads (this week)</h2>
+        <h2 class="stat-detail stat-number"><%= count_leads_since(DateTime.yesterday) %></h2>
+      </div>
+    </div>
 
-    <div class="table-wrapper bg-light-grey">
-    <div class="col-xs-10">
+    <div class="stats-wrapper">
+      <div class="bg-grey stats">
+        <h2 class="light-font stat-header">Average Response Time</h2>
+        <p class="stat-detail"><%= Lead.average(:response_time).round %> seconds</p>
+      </div>
+    </div>
+</div>
 
+<div class="main-content">
+  <div class="container-fluid bg-light-grey">
+    <div class="row">
+    <div class="col-xs-12">
+      <div class="table-wrapper">
       <!-- Manually Create Lead -->
-      <%= link_to "Add Lead", new_lead_path, class: "btn btn-primary" %>
+      <%= link_to "Add Lead", new_lead_path, class: "btn btn-primary add-lead-btn" %>
+          <div class="scroll-me">
+            <table class="table table-striped" style="width:100%">
 
-      <!-- Table setup -Chris -->
-
-
-        <div class="scroll-me">
-
-          <table class="user-table" style="width:100%">
-
-          <tr class="table-header bg-grey light-font">
+          <tr class="bg-grey light-font table-font" id="table-header-yellow">
             <th class="user-th">Status</th>
             <th class="user-th">Saleperson</th>
             <th class="user-th">Received</th>
-            <th class="user-th">Contact Name:</th>
-            <th class="user-th">Contact Email:</th>
+            <th class="user-th">Contact Name</th>
+            <th class="user-th">Contact Email</th>
             <th class="user-th">Source</th>
             <th class="user-th"></th>
             <th class="user-th"></th>
@@ -45,17 +63,21 @@
             <td class="user-td">
             <div class="drpdwn">
                 <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Options
+                  <button class="btn btn-primary dropdown-toggle table-button" type="button" data-toggle="dropdown">Options
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                    <li><%= link_to "Accept Lead", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
-                    <li><%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
-                    <li><%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
+                    <li><%= link_to "Accept Lead", mark_as_accepted_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
+                    <li><%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
+                    <li><%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
                   </ul>
                 </div>
             </div>
             </td>
+
+            <td class="user-td"><%= link_to "Edit", edit_lead_path(lead), class: "btn btn-primary table-button" %></td>
+
             <td class="user-td"><%= link_to "Edit", edit_lead_path(lead), class: "btn btn-primary" %></td>
+
             <td class="user-td">
             <%= link_to lead_path(lead), method: :delete, data: { confirm: "Are you sure you want to Delete this lead?" } do %>
               <i class="fa fa-times" aria-hidden="true"></i>
@@ -64,17 +86,13 @@
           </tr>
           <% end %>
           </table>
-
+          </div>
         </div>
       </div>
     </div>
+
     </div>
 </div>
-
-
-
-
-
 
 <!-- Stats -->
 
