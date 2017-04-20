@@ -13,7 +13,6 @@ Lead.destroy_all
 
 alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", password: "123456", photo: "http://placehold.it/350x350", rank: 2)
 
-
   1.times do
     lead_name = "Biz Metzler"
     lead = Lead.new(
@@ -27,7 +26,7 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
     lead.save!
   end
 
-15.times do
+10.times do
   name = Faker::Name.name
   new_user = User.new(
     name: name,
@@ -50,7 +49,7 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
       )
     lead.save!
   end
-  puts "Five leads created!"
+  puts "lead created!"
 
   accepted_leads = []
 
@@ -75,4 +74,3 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
     lead.save
   end
 end
-

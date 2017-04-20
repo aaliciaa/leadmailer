@@ -3,7 +3,7 @@
     <div class="stats-wrapper">
       <div class="bg-grey stats">
         <h2 class="light-font stat-header">Conversion Rate</h2>
-        <p class="stat-detail stat-number"><%= conversion_rate_for(@leads.where(status: "settled"), @leads) %>%</p>
+        <p class="stat-detail stat-number"><%= global_conversion_rate_for(@leads.where(status: "settled"), @leads) %>%</p>
       </div>
     </div>
 
