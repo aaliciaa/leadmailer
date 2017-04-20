@@ -1,13 +1,28 @@
+<div class="navbar-home">
+  <!-- Logo -->
+
+  <div class="navbar-wagon-left">
+    <%= link_to root_path, class: "navbar-home-brand" do %>
+      <%= image_tag "logo.png" %>
+    <% end %>
+
+    <ul class="list-inline navbar-buttons">
+      <li><%= link_to "Login", new_user_session_path, {class: "btn-transparent login navbar-links"} %> </li>
+      <li><%= link_to "Get started for FREE", new_user_session_path, {class: "btn btn-primary get-started navbar-links"} %> </li>
+    </ul>
+  </div>
+</div>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
   <!-- Banner code -->
 <div class="banner-wrapper">
   <div class="banner banner-gradient" id="banner-gradient" style="background-image: url('<%= image_path "banner.jpg" %>');">
-  <%= image_tag "home-logo.png", alt: "logo", class: "banner-logo" %>
   <div class="banner-text">
     <h1 class="light-font">The Lead Distribution Solution<BR>
   for Brokers and Sales Teams.</h1>
   </div>
-    <%= link_to "Login", new_user_session_path, {class: "btn-transparent login"} %>
-    <%= link_to "Get started for FREE", new_user_session_path, {class: "btn btn-primary get-started"} %>
 </div>
 
 <!-- Do you have salesteam...etc -->
@@ -28,7 +43,7 @@ and a sales team to distribute them to?</h1>
 
 
 <!-- 3 x flip cards -->
-<div class="flip-wrapper bg-blue">
+<div class="flip-wrapper bg-gradient">
 <h1 class="light-font"> Pricing Plans </h1>
   <div class="row">
     <div class="col-md-4">
