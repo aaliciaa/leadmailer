@@ -21,6 +21,7 @@ class LeadsController < ApplicationController
     end
   end
 
+
   def edit
   end
 
@@ -57,6 +58,30 @@ class LeadsController < ApplicationController
     @lead.status = "lost"
     @lead.save
     redirect_to leads_path
+  end
+
+  # logic to simulate email generation
+
+  def create_from_email
+    @lead = Lead.new
+  end
+
+  def create_new_from_email
+    @lead = Lead.new(lead_params)
+    @lead.received_at = DateTime.now()
+    @lead.status = "pending"
+    @lead.user = assign_user(@lead.email)
+    @lead.save
+    redirect_to leads_path
+  end
+
+  def assign_user(input_email)
+    if Lead.where(email: input_email)
+      Lead.where(email: input_email).last.user
+    else
+      # just takes the first user, need to develop lineup
+      User.first
+    end
   end
 
 private

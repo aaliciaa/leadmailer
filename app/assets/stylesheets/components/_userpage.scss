@@ -32,7 +32,7 @@
 }
 
 .table-wrapper {
-  height: 85vh;
+  // height: 85vh;
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
@@ -43,4 +43,9 @@
     overflow-y: scroll;
     height: 700px;
     overflow: -moz-scrollbars-vertical;
+}
+
+// User Buttons
+.add-lead-btn {
+  margin-bottom: 11px;
 }

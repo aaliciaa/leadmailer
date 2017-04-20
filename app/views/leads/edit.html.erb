@@ -1,11 +1,18 @@
 <h1>Leads#edit</h1>
 <p>Find me in app/views/leads/edit.html.erb</p>
 
-
-<%= simple_form_for @lead do |f| %>
-  <%= f.input :name %>
-  <%= f.input :email %>
-  <%= f.input :source %>
-  <%= f.association :user %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-md-offset-6">
+      <div class="bg-light-grey lead-form">
+        <%= simple_form_for @lead do |f| %>
+          <%= f.input :name %>
+          <%= f.input :email %>
+          <%= f.input :source %>
+          <%= f.association :user %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
