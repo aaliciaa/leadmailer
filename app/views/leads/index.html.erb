@@ -73,7 +73,10 @@
                 </div>
             </div>
             </td>
+
             <td class="user-td"><%= link_to "Edit", edit_lead_path(lead), class: "btn btn-primary table-button" %></td>
+
+            <td class="user-td"><%= link_to "Edit", edit_lead_path(lead), class: "btn btn-primary" %></td>
 
             <td class="user-td">
             <%= link_to lead_path(lead), method: :delete, data: { confirm: "Are you sure you want to Delete this lead?" } do %>
@@ -87,7 +90,8 @@
         </div>
       </div>
     </div>
-  </div>
+
+    </div>
 </div>
 
 <!-- Stats -->
