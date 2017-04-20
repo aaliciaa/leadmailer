@@ -58,7 +58,18 @@
                 <td class="user-td"><%= user.name %></td>
                 <td class="user-td"><%= user.email %></td>
                 <td class="pad-right-plz"><%= user.available %></td>
-                <td class="pad-right-plz">X</td>
+
+
+
+
+                <td class="pad-right-plz">
+                  <%= link_to user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete this user?" } do %>
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                  <% end %>
+                </td>
+
+
+
               <% end %>
               </tr>
               </table>

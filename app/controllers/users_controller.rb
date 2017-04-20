@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to user_path(@user)
+    redirect_to :back
   end
 
   def toggle_availability
