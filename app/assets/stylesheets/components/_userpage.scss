@@ -2,14 +2,42 @@
   text-align: left;
 }
 
-.table-header-green {
+.table-button {
+  height: 30px;
+  font-size: 11px;
+  margin-left: -8px;
+}
+
+.table-dropdown {
+    background-color: #ffffff;
+    color: #252525;
+    font-size: 12px;
+    margin: 10px;
+}
+
+.fa-times {
+  padding-right: 10px;
+  margin-left: -6px;
+  color: #E81617;
+}
+
+#table-header-green {
   background-color: #97c05c;
+  text-align: left;
+}
+
+#table-header-yellow {
+  background-color: #f2bc4e;
   text-align: left;
 }
 
 .user-th {
   text-align: left;
   height: 50px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding-left: 14px;
 }
 
 .pad-left-plz {
@@ -25,6 +53,9 @@
 
 .user-td {
   height: 50px;
+  font-size: 13px;
+  text-align: left;
+  padding-left: 14px;
 }
 
 .user-td-center {
@@ -32,16 +63,11 @@
   text-align: center;
 }
 
-.user-table {
-  background-color: #FFFFFF;
-}
-
 .table-wrapper {
   // height: 85vh;
   width: 100%;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 30px;
+  padding: 36px 18px;
+  margin-bottom: 10px;
 }
 
 .scroll-me {
@@ -53,6 +79,9 @@
 // User Buttons
 .add-lead-btn {
   margin-bottom: 11px;
+  background-color: #53b8e9;
+  border-color: none;
+  font-size: 11px;
 }
 
 // Stats styling
