@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :toggle_availability]
 
   def index
-    @users = User.all
+    @users = User.order(:name)
     @leads = Lead.all
   end
 

@@ -2,7 +2,7 @@ class LeadsController < ApplicationController
   before_action :set_lead, only: [:edit, :update, :destroy, :mark_as_settled, :mark_as_lost, :mark_as_accepted]
 
   def index
-    @leads = Lead.all
+    @leads = Lead.order(received_at: :desc)
     @users = User.all
   end
 
