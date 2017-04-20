@@ -26,7 +26,7 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
     lead.save!
   end
 
-10.times do
+15.times do
   name = Faker::Name.name
   new_user = User.new(
     name: name,
@@ -49,7 +49,7 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
       )
     lead.save!
   end
-  puts "lead created!"
+  puts "5 leads created!"
 
   accepted_leads = []
 
