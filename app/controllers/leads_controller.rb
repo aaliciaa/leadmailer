@@ -81,7 +81,7 @@ class LeadsController < ApplicationController
   end
 
   def assign_user(input_email)
-    if Lead.where(email: input_email)
+    if Lead.where(email: input_email) > 0
       Lead.where(email: input_email).last.user
     else
       # just takes the first user, need to develop lineup
