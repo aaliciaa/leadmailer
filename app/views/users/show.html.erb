@@ -5,9 +5,14 @@
       <p><%= @user.name %></p>
       <h1><%= @user.available ? "Available" : "Offline" %></h1>
       <%= link_to @user.available ? "Switch to Offline" : "Switch to Available", toggle_availability_user_path(@user), method: :patch, class: "btn btn-primary" %>
+
       <p> Conversion Rate: <%= conversion_rate_for(@user.leads.where(status: "settled"), @user.leads.where(status: ["settled", "lost"])) %> %</p>
       <p> Ranking: <%= find_user_ranking(@user, @users) %> / <%= @users.count %></p>
       <p> Avg Response Time: <%= @user.leads.average(:response_time).round %> seconds</p>
+
+      <p> Conversion Rate: <%= conversion_rate_for(@user) %> </p>
+      <p> Ranking: <%= find_user_ranking(@user, @users) %></p>
+
     </div>
   </div>
 

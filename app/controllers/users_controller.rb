@@ -46,7 +46,7 @@ class UsersController < ApplicationController
     # Click to update availability (Link_to in show)
     @user.toggle!(:available)
 
-    redirect_to user_path(@user)
+    redirect_to :back
     # Remove or add from lead rotation
   end
 
