@@ -1,3 +1,13 @@
+.main-wrapper {
+  display: flex;
+  .sidebar {
+    flex: 0 0 20%;
+  }
+  .main-content {
+    flex: 1 0 80%;
+  }
+}
+
 .table-header {
   text-align: left;
 }
@@ -31,6 +41,14 @@
   text-align: left;
 }
 
+.table > tbody > tr > th {
+  vertical-align: middle;
+}
+
+.table > tbody > tr > td {
+     vertical-align: middle;
+}
+
 .user-th {
   text-align: left;
   height: 50px;
@@ -38,6 +56,7 @@
   font-weight: 400;
   letter-spacing: 2px;
   padding-left: 14px;
+  vertical-align: middle;
 }
 
 .pad-left-plz {
@@ -56,6 +75,7 @@
   font-size: 13px;
   text-align: left;
   padding-left: 14px;
+  vertical-align: middle;
 }
 
 .user-td-center {
@@ -66,7 +86,7 @@
 .table-wrapper {
   // height: 85vh;
   width: 100%;
-  padding: 36px 18px;
+  padding: 18px 19px;
   margin-bottom: 10px;
   height: calc(90vh - 70px);
 }
@@ -88,7 +108,6 @@
 // Stats styling
 
 .stats-wrapper {
-  background-color: #ffffff;
   margin: 20px;
 }
 
@@ -117,4 +136,8 @@
 
 .stat-number {
   font-size: 33px;
+}
+
+.sidebar {
+  background-color: $darkgrey;
 }
