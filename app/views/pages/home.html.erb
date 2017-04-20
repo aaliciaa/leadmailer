@@ -1,27 +1,23 @@
 <div class="navbar-home">
   <!-- Logo -->
-
   <div class="navbar-wagon-left">
     <%= link_to root_path, class: "navbar-home-brand" do %>
       <%= image_tag "logo.png" %>
     <% end %>
 
-    <ul class="list-inline navbar-buttons">
+    <ul class="list-inline">
       <li><%= link_to "Login", new_user_session_path, {class: "btn-transparent login navbar-links"} %> </li>
       <li><%= link_to "Get started for FREE", new_user_session_path, {class: "btn btn-primary get-started navbar-links"} %> </li>
     </ul>
   </div>
 </div>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
   <!-- Banner code -->
 <div class="banner-wrapper">
-  <div class="banner banner-gradient" id="banner-gradient" style="background-image: url('<%= image_path "banner.jpg" %>');">
+  <div class="banner banner-gradient" id="banner-gradient" style="background-image: url('<%= image_path "banner.png" %>');">
   <div class="banner-text">
-    <h1 class="light-font">The Lead Distribution Solution<BR>
-  for Brokers and Sales Teams.</h1>
+    <h1 class="dark-font">The Lead Distribution Solution<BR>
+  for Sales Teams</h1>
   </div>
 </div>
 
@@ -36,6 +32,29 @@
 and a sales team to distribute them to?</h1>
 <%= image_tag "blueline.png", alt: "blue line", width: "200px" %>
 <p>Set up your sales team and specifiy delivery rules with lead mailer and watch your ROI increase. We know speed of contact is critical so we’ve cut out the middle man.</p>
+<%= link_to "Get started", new_user_session_path, {class: "btn btn-primary pull-right"} %>
+    </div>
+  </div>
+</div>
+
+<!-- Let us assist you in 3 simple steps -->
+<div class="salesteam-wrapper bg-gradient">
+  <div class="row">
+    <div class="col-md-4">
+    <h1 class="light-font home-number">1</h1>
+    <h2 class="light-font">Route</h2>
+    <p class="light-font">Add your sales team via their email address, and they will be added to the lead rotation.</p>
+    </div>
+    <div class="col-md-4">
+    <h1 class="light-font home-number">2</h1>
+     <h2 class="light-font">Record</h2>
+    <p class="light-font">Any new leads are emailed directly to the salesperson, and added to the manager and salesperson dashboard</p>
+    </div>
+    <div class="col-md-4">
+    <h1 class="light-font home-number">3</h1>
+     <h2 class="light-font">Report</h2>
+    <p class="light-font">Add your sales team via their email address, and they will be added to the lead rotation.</p>
+    </div>
 <%= link_to "Get started", new_user_session_path, {class: "btn btn-primary pull-right"} %>
     </div>
   </div>
