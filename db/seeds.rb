@@ -13,8 +13,6 @@ Lead.destroy_all
 
 alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", password: "123456", photo: "http://placehold.it/350x350", rank: 2)
 
-aaaaaa = User.create(name: "AAAAA", email: "aaa@aaa.com", password: "aaaaaa", photo: "http://placehold.it/350x350", rank: 3)
-
 
   1.times do
     lead_name = "Biz Metzler"
