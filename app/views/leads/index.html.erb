@@ -1,7 +1,6 @@
 <div class="main-wrapper">
   <div class="sidebar">
     <div class="stats-wrapper">
-    <h3>Campaign Overview</h3>
       <div class="bg-grey stats">
         <h2 class="light-font stat-header">Conversion Rate</h2>
         <p class="stat-detail stat-number"><%= conversion_rate_for(@leads.where(status: "settled"), @leads) %>%</p>
@@ -35,15 +34,17 @@
     <div class="row">
     <div class="col-xs-12">
       <div class="table-wrapper">
+      <ul class="list-inline">
+      <li><h1>Active Leads Status</h1></li>
       <!-- Manually Create Lead -->
-      <%= link_to "Add Lead", new_lead_path, class: "btn btn-primary add-lead-btn" %>
+      <li><%= link_to "Add Lead", new_lead_path, class: "btn btn-primary add-lead-btn" %></li>
           <div class="scroll-me">
             <table class="table table-striped" style="width:100%">
 
           <tr class="bg-grey light-font table-font" id="table-header-yellow">
-            <th class="user-th">Status</th>
-            <th class="user-th">Saleperson</th>
             <th class="user-th">Received</th>
+            <th class="user-th">Status</th>
+            <th class="user-th">Salesperson</th>
             <th class="user-th">Contact Name</th>
             <th class="user-th">Contact Email</th>
             <th class="user-th">Source</th>
@@ -54,9 +55,9 @@
 
           <% @leads.each do |lead| %>
           <tr class="user-tr">
+            <td class="user-td"><%= lead.created_at %></td>
             <td class="user-td"><%= lead.status.capitalize %></td>
             <td class="user-td"><%= link_to lead.user.name, user_path(lead.user) %></td>
-            <td class="user-td"><%= lead.created_at %></td>
             <td class="user-td"><%= lead.name %></td>
             <td class="user-td"><%= lead.email %></td>
             <td class="user-td"><%= lead.source %></td>
@@ -73,11 +74,7 @@
                 </div>
             </div>
             </td>
-
             <td class="user-td"><%= link_to "Edit", edit_lead_path(lead), class: "btn btn-primary table-button" %></td>
-
-            <td class="user-td"><%= link_to "Edit", edit_lead_path(lead), class: "btn btn-primary" %></td>
-
             <td class="user-td">
             <%= link_to lead_path(lead), method: :delete, data: { confirm: "Are you sure you want to Delete this lead?" } do %>
               <i class="fa fa-times" aria-hidden="true"></i>
@@ -90,24 +87,6 @@
         </div>
       </div>
     </div>
-
     </div>
+  </div>
 </div>
-
-<!-- Stats -->
-
-  <!-- Conversion Rate -->
-  <p>Conversion Rate: <%= conversion_rate_for(@leads.where(status: "settled"), @leads) %> %</p>
-  <!-- Avg Response Time -->
-  <p>Avg Response Time: <%= Lead.average(:response_time).round %> seconds</p>
-  <!-- Total Leads this week -->
-  <p>Total Leads this week: <%= count_leads_since(DateTime.yesterday) %> leads this week!</p>
-  <!-- Highest Salesperon -->
-  <p>SalesPerson Ranking: <%= calculate_ranking(User) %> is First!!</p>
-  <!-- User Response time -->
-  <p>User AVG Response Time: <%= User.first.leads.average(:response_time).round %> seconds</p>
-  <!-- Leads from each Source -->
-  <p>Leads from Truck Sales: <%= @leads.where(source: "Truck Sales").count %> leads</p>
-  <!-- Lead generated ... ago -->
-  <p>Lead generated... <%= time_ago_in_words(User.first.leads.first.created_at) %> ago</p>
-  <%= link_to "simulate email", 'simulate_email' %>
