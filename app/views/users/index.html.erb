@@ -2,42 +2,38 @@
 
 <div class="main-wrapper">
   <div class="sidebar">
-
   </div>
   <div class="main-content">
     <div class="container-fluid bg-light-grey">
       <div class="row">
         <!-- div for the add lead button and view window -->
         <div class="col-xs-12">
-          <div class="table-wrapper ">
-
             <!-- Button to add new lead -->
-            <div class="pull-right">
-              <%= link_to "Add Lead", new_lead_path, class: "btn btn-primary" %>
-            </div>
-
+          <div class="table-wrapper ">
+           <%= link_to "Add Lead", new_lead_path, class: "btn btn-primary add-lead-btn" %>
             <!-- Main table of employees -->
-            <table class="user-table" style="width:100%">
+            <div class="scroll-me">
+              <table class="user-table" style="width:100%">
 
-            <tr class="table-header bg-grey light-font">
-              <th class="pad-left-plz">Ranking</th>
-              <th class="user-th">Salesperson</th>
-              <th class="user-th">Email</th>
-              <th class="user-th">Unavailable</th>
-              <th class="user-th">Delete User</th>
-            </tr>
+              <tr class="table-header bg-grey light-font">
+                <th class="pad-left-plz">Ranking</th>
+                <th class="user-th">Salesperson</th>
+                <th class="user-th">Email</th>
+                <th class="user-th">Unavailable</th>
+                <th class="user-th">Delete User</th>
+              </tr>
 
-            <% @users.each do |user| %>
-            <tr class="user-tr">
-              <td class="pad-left-plz"><%= user.rank %></td>
-              <td class="user-td"><%= user.name %></td>
-              <td class="user-td"><%= user.email %></td>
-              <td class="pad-right-plz"><%= user.available %></td>
-              <td class="pad-right-plz">X</td>
-            <% end %>
-            </tr>
-            </table>
-
+              <% @users.each do |user| %>
+              <tr class="user-tr">
+                <td class="pad-left-plz"><%= user.rank %></td>
+                <td class="user-td"><%= user.name %></td>
+                <td class="user-td"><%= user.email %></td>
+                <td class="pad-right-plz"><%= user.available %></td>
+                <td class="pad-right-plz">X</td>
+              <% end %>
+              </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>
