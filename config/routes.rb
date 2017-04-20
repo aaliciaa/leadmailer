@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   # static pages
 
   get 'styleguide', to: 'pages#styleguide'
+  get 'simulate_email', to: 'leads#create_from_email'
+  patch 'create_simulate_email', to: 'leads#create_new_from_email'
 
 end

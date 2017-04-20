@@ -82,3 +82,4 @@
   <p>Leads from Truck Sales: <%= @leads.where(source: "Truck Sales").count %> leads</p>
   <!-- Lead generated ... ago -->
   <p>Lead generated... <%= time_ago_in_words(User.first.leads.first.created_at) %> ago</p>
+  <%= link_to "simulate email", 'simulate_email' %>

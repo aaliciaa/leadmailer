@@ -1,0 +1,14 @@
+<h1>Similate Lead being created from incoming email</h1>
+
+
+<%= simple_form_for @lead, :url => create_simulate_email_path, :method => :patch do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :source %>
+  <%= f.button :submit %>
+<% end %>
+
+
+
+
+
