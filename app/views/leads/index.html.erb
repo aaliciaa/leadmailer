@@ -103,7 +103,7 @@
   <!-- Total Leads this week -->
   <p>Total Leads this week: <%= count_leads_since(DateTime.yesterday) %> leads this week!</p>
   <!-- Highest Salesperon -->
-  <p>SalesPerson Ranking: <%= calculate_ranking(User) %> is First!!</p>
+  <p>SalesPerson Ranking: <%= calculate_ranking(User.all)[0][:name] %> is First!!</p>
   <!-- User Response time -->
   <p>User AVG Response Time: <%= User.first.leads.average(:response_time).round %> seconds</p>
   <!-- Leads from each Source -->

@@ -1,33 +1,88 @@
 <div class="container">
   <div class="col-sm-4">
     <div class="bg-grey">
-      <h1> USER DETAILS - sidebar content </h1>
-
       <%= image_tag @user.photo, class: "avatar-large" %>
-
-      <p>Name: <%= @user.name %></p>
-
-      <p>Available? <%= @user.available %></p>
-
-      <%= link_to 'Availability', toggle_availability_user_path(@user), method: :patch, class: "btn btn-primary" %>
-
-      <p> Conversion Rate: Calculate user.leads.count / user.settled.count * 100 %</p>
-
-      <p> You are ranked <%= @user.rank %> / <%= User.count %>
-      # method to calculate and update rank
+      <p><%= @user.name %></p>
+      <h1><%= @user.available ? "Available" : "Offline" %></h1>
+      <%= link_to @user.available ? "Switch to Offline" : "Switch to Available", toggle_availability_user_path(@user), method: :patch, class: "btn btn-primary" %>
+      <p> Conversion Rate: <%= conversion_rate_for(@user.leads.where(status: "settled"), @user.leads.where(status: ["settled", "lost"])) %> </p>
+      <p> Ranking: <%= find_user_ranking(@user, @users) %></p>
     </div>
   </div>
 
   <div class="col-sm-8">
-    <h1> LEAD DETAILS - table content </h1>
-
-    <% @leads.each do |lead| %>
-     <p>Contact Name: <%= lead.name %></p>
-     <p>Contact Email: <%= lead.email %></p>
-     <p>Lead Status: <%= lead.status.capitalize %></p>
-     <p>Lead Source: <%= lead.source %></p>
-     <p>Saleperson: <%= lead.user ? lead.user.name : "" %></p>
-     <p>Lead Received: <%= lead.created_at %></p>
-    <% end %>
+    <h1> Pending Leads: </h1>
+    <div class="scroll-me2">
+      <table class="user-table" style="width:100%">
+      <tr class="table-header bg-grey light-font">
+        <th class="user-th"></th>
+        <th class="user-th">Lead ID:</th>
+        <th class="user-th">Status:</th>
+        <th class="user-th">Recieved:</th>
+      </tr>
+      <% @pending_leads.each do |lead| %>
+      <tr class="user-tr">
+        <td class="user-td"><%= link_to "Accept", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary" %></td>
+        <td class="user-td">000<%= lead.id %></td>
+        <td class="user-td"><%= lead.status.capitalize %></td>
+        <td class="user-td"><%= time_ago_in_words(User.first.leads.first.created_at) %> ago (<%= lead.created_at %>)</td>
+      </tr>
+      <% end %>
+      </table>
+    </div>
+    <h1> Ongoing Leads: </h1>
+    <div class="scroll-me2">
+      <table class="user-table" style="width:100%">
+      <tr class="table-header bg-grey light-font">
+        <th class="user-th">Lead ID:</th>
+        <th class="user-th">Name:</th>
+        <th class="user-th">Email:</th>
+        <th class="user-th">Source:</th>
+        <th class="user-th">Generated:</th>
+        <th class="user-th">Outcome:</th>
+      </tr>
+      <% @ongoing_leads.each do |lead| %>
+      <tr class="user-tr">
+        <td class="user-td">000<%= lead.id %></td>
+        <td class="user-td"><%= lead.name %></td>
+        <td class="user-td"><%= lead.email %></td>
+        <td class="user-td"><%= lead.source %></td>
+        <td class="user-td"><%= lead.created_at %></td>
+        <td class="user-td">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Options
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Accept Lead", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
+                <li><%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
+                <li><%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
+              </ul>
+            </div>
+        </td>
+      </tr>
+      <% end %>
+      </table>
+    </div>
+    <h1> Previous Leads: </h1>
+    <div class="scroll-me2">
+      <table class="user-table" style="width:100%">
+      <tr class="table-header bg-grey light-font">
+        <th class="user-th">Name:</th>
+        <th class="user-th">Email:</th>
+        <th class="user-th">Source:</th>
+        <th class="user-th">Generated:</th>
+        <th class="user-th">Result:</th>
+      </tr>
+      <% @completed_leads.each do |lead| %>
+      <tr class="user-tr">
+        <td class="user-td"><%= lead.name %></td>
+        <td class="user-td"><%= lead.email %></td>
+        <td class="user-td"><%= lead.source %></td>
+        <td class="user-td"><%= lead.created_at %></td>
+        <td class="user-td"><%= lead.status.capitalize %></td>
+      </tr>
+      <% end %>
+      </table>
     </div>
   </div>
+</div>
