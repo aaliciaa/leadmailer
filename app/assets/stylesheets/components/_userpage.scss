@@ -40,8 +40,7 @@
 }
 
 .scroll-me {
-  overflow:hidden;
     overflow-y: scroll;
     height: 700px;
+    overflow: -moz-scrollbars-vertical;
 }
-
