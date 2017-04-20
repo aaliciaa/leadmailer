@@ -29,9 +29,9 @@
             <th class="user-th">Contact Name:</th>
             <th class="user-th">Contact Email:</th>
             <th class="user-th">Source</th>
-            <th class="user-th">Outcome</th>
-            <th class="user-th">Edit</th>
-            <th class="user-th">Delete</th>
+            <th class="user-th"></th>
+            <th class="user-th"></th>
+            <th class="user-th"></th>
           </tr>
 
           <% @leads.each do |lead| %>
@@ -43,6 +43,7 @@
             <td class="user-td"><%= lead.email %></td>
             <td class="user-td"><%= lead.source %></td>
             <td class="user-td">
+            <div class="drpdwn">
                 <div class="dropdown">
                   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Options
                   <span class="caret"></span></button>
@@ -52,9 +53,19 @@
                     <li><%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
                   </ul>
                 </div>
+            </div>
             </td>
             <td class="user-td"><%= link_to "Edit", edit_lead_path(lead), class: "btn btn-primary" %></td>
-            <td class="user-td"><%= link_to "Delete", lead_path(lead), method: :delete, data: { confirm: "Are you sure you want to Delete this lead?" } %></td>
+
+
+
+
+            <td class="user-td">
+            <%= link_to lead_path(lead), method: :delete, data: { confirm: "Are you sure you want to Delete this lead?" } do %>
+              <i class="fa fa-times" aria-hidden="true"></i>
+            <% end %>
+            </td>
+
 
           </tr>
           <% end %>
