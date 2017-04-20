@@ -23,28 +23,39 @@
           <table class="user-table" style="width:100%">
 
           <tr class="table-header bg-grey light-font">
+            <th class="user-th">Status</th>
             <th class="user-th">Saleperson</th>
-            <th class="user-th">Lead Generated</th>
+            <th class="user-th">Received</th>
             <th class="user-th">Contact Name:</th>
             <th class="user-th">Contact Email:</th>
-            <th class="user-th">Lead Source</th>
-            <th class="user-th">Lead Status</th>
-            <th class="user-th">Action</th>
+            <th class="user-th">Source</th>
+            <th class="user-th">Outcome</th>
+            <th class="user-th">Edit</th>
+            <th class="user-th">Delete</th>
           </tr>
 
           <% @leads.each do |lead| %>
           <tr class="user-tr">
+            <td class="user-td"><%= lead.status.capitalize %></td>
             <td class="user-td"><%= link_to lead.user.name, user_path(lead.user) %></td>
             <td class="user-td"><%= lead.created_at %></td>
             <td class="user-td"><%= lead.name %></td>
             <td class="user-td"><%= lead.email %></td>
             <td class="user-td"><%= lead.source %></td>
-            <td class="user-td"><%= lead.status.capitalize %></td>
-            <td class="user-td"><%= link_to "Accept Lead", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary" %>
-            <%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "btn btn-primary" %>
-            <%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "btn btn-primary" %>
-            <%= link_to "Edit", edit_lead_path(lead), class: "btn btn-primary" %>
-            <%= link_to "Delete", lead_path(lead), method: :delete, data: { confirm: "Are you sure you want to Delete this lead?" } %></td>
+            <td class="user-td">
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Options
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Accept Lead", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
+                    <li><%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
+                    <li><%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
+                  </ul>
+                </div>
+            </td>
+            <td class="user-td"><%= link_to "Edit", edit_lead_path(lead), class: "btn btn-primary" %></td>
+            <td class="user-td"><%= link_to "Delete", lead_path(lead), method: :delete, data: { confirm: "Are you sure you want to Delete this lead?" } %></td>
+
           </tr>
           <% end %>
           </table>

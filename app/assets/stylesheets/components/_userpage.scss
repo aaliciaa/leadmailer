@@ -40,13 +40,12 @@
 }
 
 .scroll-me {
-  overflow:hidden;
     overflow-y: scroll;
     height: 700px;
+    overflow: -moz-scrollbars-vertical;
 }
 
 // User Buttons
 .add-lead-btn {
   margin-bottom: 11px;
 }
-
