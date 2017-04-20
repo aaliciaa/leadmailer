@@ -3,6 +3,7 @@ class LeadsController < ApplicationController
 
   def index
     @leads = Lead.all
+    @users = User.all
   end
 
   def new
