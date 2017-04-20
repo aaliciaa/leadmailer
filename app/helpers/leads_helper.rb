@@ -15,10 +15,11 @@ module LeadsHelper
 
   def calculate_ranking(users)
     ranking = []
-    users.each do |user|
+    User.all.each do |user|
       ranking << {name: user.name, conversion: conversion_rate_for(user.leads.where(status: "settled"), user.leads.where(status: ["settled", "lost"]))}
     end
     ranking.sort_by { |hsh| hsh[:conversion] }.reverse
+    # result -> [{name: biz, conversion: 23}, {}, {}]
   end
 
   def find_user_ranking(user, users)
