@@ -18,7 +18,6 @@ module LeadsHelper
       ranking << {name: user.name, conversion: conversion_rate_for(user)}
     end
     ranking.sort_by { |hsh| hsh[:conversion] }.reverse
-    puts ranking
     # result -> [{name: biz, conversion: 23, ranking: 1}, {}, {}]
     # ranking.map { |hsh| hsh[:conversion] matrix.find_index { |salesperson| salesperson[:name] == user.name } + 1 }
   end
