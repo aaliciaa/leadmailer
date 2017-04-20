@@ -30,7 +30,10 @@ class UsersController < ApplicationController
 
   def show
     # find, as above
-    @leads = @user.leads
+    @pending_leads = @user.leads.where(status: "pending")
+    @ongoing_leads = @user.leads.where(status: "accepted")
+    @completed_leads = @user.leads.where(status: ["settled", "lost"])
+    @users = User.all
   end
 
 
@@ -43,7 +46,7 @@ class UsersController < ApplicationController
     # Click to update availability (Link_to in show)
     @user.toggle!(:available)
 
-    redirect_to user_path(@user)
+    redirect_to :back
     # Remove or add from lead rotation
   end
 

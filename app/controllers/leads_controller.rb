@@ -3,6 +3,7 @@ class LeadsController < ApplicationController
 
   def index
     @leads = Lead.all
+    @users = User.all
   end
 
   def new
@@ -29,6 +30,7 @@ class LeadsController < ApplicationController
     @lead.update(lead_params)
     if @lead.save
       redirect_to leads_path
+      # redirect_to :back
     else
       render :new
     end
@@ -45,19 +47,22 @@ class LeadsController < ApplicationController
     @lead.response_time = @lead.accepted_at - @lead.created_at
     @lead.status = "accepted"
     @lead.save
-    redirect_to leads_path
+    # redirect_to leads_path
+    redirect_to :back
   end
 
   def mark_as_settled
     @lead.status = "settled"
     @lead.save
-    redirect_to leads_path
+    # redirect_to leads_path
+    redirect_to :back
   end
 
   def mark_as_lost
     @lead.status = "lost"
     @lead.save
-    redirect_to leads_path
+    # redirect_to leads_path
+    redirect_to :back
   end
 
   # logic to simulate email generation
