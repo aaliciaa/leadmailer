@@ -1,6 +1,7 @@
 .avatar {
-  width: 30px;
+  width: 50px;
   border-radius: 50%;
+  text-align: center;
 }
 .avatar-large {
   width: 150px;
@@ -23,7 +24,8 @@
 }
 
 .avatar-small {
-  width: 60px;
+  width: 30px;
   margin-left: 40%;
   padding-top: 5px;
+  border-radius: 50%;
 }
