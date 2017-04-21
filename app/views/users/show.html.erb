@@ -8,7 +8,7 @@
 
       <p> Conversion Rate: <%= conversion_rate_for(@user) %> %</p>
       <p> Ranking: <%= find_user_ranking(@user, @users) %> / <%= @users.count %></p>
-      <p> Avg Response Time: <%= @user.leads.average(:response_time).round %> seconds</p>
+      <p> Avg Response Time: <%= @user.leads.average(:response_time) ? @user.leads.average(:response_time) : "n/a" %></p>
 
       <p> Conversion Rate: <%= conversion_rate_for(@user) %> </p>
       <p> Ranking: <%= find_user_ranking(@user, @users) %></p>
