@@ -1,45 +1,63 @@
-<div class="container">
-  <div class="col-sm-4">
-    <div class="bg-grey">
-      <%= image_tag @user.photo, class: "avatar-large" %>
-      <p><%= @user.name %></p>
-      <h1><%= @user.available ? "Available" : "Offline" %></h1>
-      <%= link_to @user.available ? "Switch to Offline" : "Switch to Available", toggle_availability_user_path(@user), method: :patch, class: "btn btn-primary" %>
+<div class="main-wrapper bg-light-grey">
+  <div class="sidebar">
+    <div class="avatar-wrapper">
+          <%= image_tag @user.photo, class: "avatar-large" %>
+          <h3 class="light-font"><%= @user.name %></h3>
+         <!--  <p><%= @user.available ? "Available" : "Offline" %></p> -->
+          <%= link_to @user.available ? "Available" : "Offline", toggle_availability_user_path(@user), method: :patch, class: "avail-button" %>
+    </div>
+    
+      <div class="bg-grey stats">
+        <h2 class="light-font stat-header">Conversion Rate</h2>
+          <p class="stat-detail stat-number"><%= conversion_rate_for(@user) %> %</p>
+      </div>
 
-      <p> Conversion Rate: <%= conversion_rate_for(@user) %> %</p>
-      <p> Ranking: <%= find_user_ranking(@user, @users) %> / <%= @users.count %></p>
-      <p> Avg Response Time: <%= @user.leads.average(:response_time) ? @user.leads.average(:response_time) : "n/a" %></p>
+    <div class="stats-wrapper">
+      <div class="bg-grey stats">
+        <h2 class="light-font stat-header">Ranking</h2>
+          <p class="stat-detail stat-number"><%= find_user_ranking(@user, @users) %> / <%= @users.count %></p>
+      </div>
+    </div>
 
-      <p> Conversion Rate: <%= conversion_rate_for(@user) %> </p>
-      <p> Ranking: <%= find_user_ranking(@user, @users) %></p>
-
+    <div class="stats-wrapper">
+      <div class="bg-grey stats">
+        <h2 class="light-font stat-header">Avg Response Time (mins):</h2>
+          <p class="stat-detail stat-number"><%= @user.leads.average(:response_time) ? @user.leads.average(:response_time) : "n/a" %></p>
+      </div>
     </div>
   </div>
 
-  <div class="col-sm-8">
-    <h1> Pending Leads: </h1>
-    <div class="scroll-me2">
-      <table class="user-table" style="width:100%">
-      <tr class="table-header bg-grey light-font">
-        <th class="user-th"></th>
-        <th class="user-th">Lead ID:</th>
-        <th class="user-th">Status:</th>
-        <th class="user-th">Recieved:</th>
-      </tr>
-      <% @pending_leads.each do |lead| %>
-      <tr class="user-tr">
-        <td class="user-td"><%= link_to "Accept", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary" %></td>
-        <td class="user-td">000<%= lead.id %></td>
-        <td class="user-td"><%= lead.status.capitalize %></td>
-        <td class="user-td"><%= time_ago_in_words(User.first.leads.first.created_at) %> ago (<%= lead.created_at %>)</td>
-      </tr>
-      <% end %>
-      </table>
-    </div>
+<!--         <p> Conversion Rate: </p>
+        <p> Ranking: <%= find_user_ranking(@user, @users) %> / <%= @users.count %></p>
+        <p> Avg Response Time: <%= @user.leads.average(:response_time).round %> seconds</p>
+
+        <p> Conversion Rate: <%= conversion_rate_for(@user) %> </p>
+        <p> Ranking: <%= find_user_ranking(@user, @users) %></p> -->
+  <div class="col-sm-12">
+    <div class="table-wrapper">
+      <h1> Pending Leads: </h1>
+      <div class="scroll-me2">
+        <table class="user-table table table-striped" style="width:100%">
+        <tr class="table-header bg-grey light-font" id="table-header-green">
+          <th class="user-th"></th>
+          <th class="user-th">Lead ID:</th>
+          <th class="user-th">Status:</th>
+          <th class="user-th">Received:</th>
+        </tr>
+        <% @pending_leads.each do |lead| %>
+        <tr class="user-tr">
+          <td class="user-td"><%= link_to "Accept", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary add-lead-btn" %></td>
+          <td class="user-td">000<%= lead.id %></td>
+          <td class="user-td"><%= lead.status.capitalize %></td>
+          <td class="user-td"><%= time_ago_in_words(User.first.leads.first.created_at) %> ago (<%= lead.created_at %>)</td>
+        </tr>
+        <% end %>
+        </table>
+      </div>
     <h1> Ongoing Leads: </h1>
     <div class="scroll-me2">
-      <table class="user-table" style="width:100%">
-      <tr class="table-header bg-grey light-font">
+      <table class="user-table table table-striped" style="width:100%">
+      <tr class="table-header bg-grey light-font" id="table-header-green">
         <th class="user-th">Lead ID:</th>
         <th class="user-th">Name:</th>
         <th class="user-th">Email:</th>
@@ -56,12 +74,11 @@
         <td class="user-td"><%= lead.created_at %></td>
         <td class="user-td">
             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Options
+              <button class="btn btn-primary dropdown-toggle add-lead-btn" type="button" data-toggle="dropdown">Options
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><%= link_to "Accept Lead", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
-                <li><%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
-                <li><%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "btn btn-primary" %></li>
+                <li><%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
+                <li><%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
               </ul>
             </div>
         </td>
@@ -71,8 +88,8 @@
     </div>
     <h1> Previous Leads: </h1>
     <div class="scroll-me2">
-      <table class="user-table" style="width:100%">
-      <tr class="table-header bg-grey light-font">
+      <table class="user-table table table-striped" style="width:100%">
+      <tr class="table-header bg-grey light-font" id="table-header-yellow">
         <th class="user-th">Name:</th>
         <th class="user-th">Email:</th>
         <th class="user-th">Source:</th>
@@ -92,3 +109,5 @@
     </div>
   </div>
 </div>
+</div>
+

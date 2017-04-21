@@ -35,6 +35,7 @@ class UsersController < ApplicationController
     @ongoing_leads = @user.leads.where(status: "accepted")
     @completed_leads = @user.leads.where(status: ["settled", "lost"])
     @users = User.all
+    @leads = Lead.all
   end
 
 
