@@ -14,6 +14,8 @@
         <div class="bg-grey stats">
           <h2 class="light-font stat-header">Rank #1</h2>
           <h2 class="stat-detail"><%= calculate_ranking(@users).first[:name] %> </h2>
+          <!-- INSERT AVATAR HERE -->
+          <%= image_tag calculate_ranking(@users).first[:photo], class: "avatar avatar-small" %>
         </div>
       </div>
 
