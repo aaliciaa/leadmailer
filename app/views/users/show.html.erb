@@ -30,7 +30,7 @@
     <div class="stats-wrapper">
       <div class="bg-grey stats">
         <h2 class="light-font stat-header">Avg Response Time (mins):</h2>
-          <p class="stat-detail stat-number"><%= @user.leads.average(:response_time).round %></p>
+          <p class="stat-detail stat-number"><%= @user.leads.average(:response_time) ? @user.leads.average(:response_time) : "n/a" %></p>
       </div>
     </div>
   </div>
