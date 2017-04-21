@@ -14,7 +14,7 @@ User.destroy_all
 Lead.destroy_all
 
 # 1 user, 8 leads:
-alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", password: "123456", photo: "http://placehold.it/350x350", rank: nil)
+alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", password: "123456", photo: "QT_0063.jpg", rank: nil)
 
 alicia_leads = []
 8.times do
@@ -51,10 +51,10 @@ end
 # end-cases:
 
 # user with no leads
-taryn = User.create(name: "Taryn Baron", email: "taryn.baron@hotmail.com", password: "123456", photo: "http://placehold.it/350x350", rank: nil)
+taryn = User.create(name: "Taryn Baron", email: "taryn.baron@hotmail.com", password: "123456", photo: "QS_0015.jpg", rank: nil)
 
 # user with accepted leads but no closures
-nicole = User.create(name: "Nicole Smith", email: "nicole.smith@hotmail.com", password: "123456", photo: "http://placehold.it/350x350", rank: nil)
+nicole = User.create(name: "Nicole Smith", email: "nicole.smith@hotmail.com", password: "123456", photo: "QS_0067.jpg", rank: nil)
 5.times do
   lead_name = Faker::Name.name
   nicole_lead = Lead.new(
@@ -69,7 +69,7 @@ nicole = User.create(name: "Nicole Smith", email: "nicole.smith@hotmail.com", pa
 end
 
 # user with accepted leads: 2 lost, 2 settled, 2 accepted
-christie = User.create(name: "Christie Clark", email: "christie.clark@hotmail.com", password: "123456", photo: "http://placehold.it/350x350", rank: nil)
+christie = User.create(name: "Christie Clark", email: "christie.clark@hotmail.com", password: "123456", photo: "QS_0123.jpg", rank: nil)
 christie_leads = []
 8.times do
   lead_name = Faker::Name.name
