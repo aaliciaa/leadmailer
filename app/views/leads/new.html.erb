@@ -1,17 +1,15 @@
-<h1>Add a Lead...</h1>
-<p>Find me in app/views/leads/new.html.erb</p>
-
 <!-- @lead = Lead.new -->
 <div class="container">
   <div class="row">
-    <div class="col-md-12 col-md-offset-6">
+    <div class="col-md-6 col-md-offset-3">
+    <h1>Add a Lead...</h1>
       <div class="bg-light-grey lead-form">
         <%= simple_form_for @lead do |f| %>
           <%= f.input :name %>
           <%= f.input :email %>
           <%= f.input :source %>
           <%= f.association :user %>
-          <%= f.button :submit %>
+          <%= f.button :submit, class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
