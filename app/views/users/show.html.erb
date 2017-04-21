@@ -4,13 +4,21 @@
           <%= image_tag @user.photo, class: "avatar-large" %>
           <h3 class="light-font"><%= @user.name %></h3>
          <!--  <p><%= @user.available ? "Available" : "Offline" %></p> -->
-          <%= link_to @user.available ? "Available" : "Offline", toggle_availability_user_path(@user), method: :patch, class: "avail-button" %>
+<!--           <div class="col-md-6 col-md-offset-3 button-margin"> -->
+            <% if @user.available %>
+              <%= link_to "AVAILABLE", toggle_availability_user_path(@user), method: :patch, class: "avail-button" %>
+            <% else %>
+              <%= link_to "OFFLINE", toggle_availability_user_path(@user), method: :patch, class: "offline-button" %>
+            <% end %>
+          <!-- </div> -->
     </div>
-    
+
+    <div class="stats-wrapper">
       <div class="bg-grey stats">
         <h2 class="light-font stat-header">Conversion Rate</h2>
           <p class="stat-detail stat-number"><%= conversion_rate_for(@user) %> %</p>
       </div>
+    </div>
 
     <div class="stats-wrapper">
       <div class="bg-grey stats">
@@ -27,15 +35,9 @@
     </div>
   </div>
 
-<!--         <p> Conversion Rate: </p>
-        <p> Ranking: <%= find_user_ranking(@user, @users) %> / <%= @users.count %></p>
-        <p> Avg Response Time: <%= @user.leads.average(:response_time).round %> seconds</p>
-
-        <p> Conversion Rate: <%= conversion_rate_for(@user) %> </p>
-        <p> Ranking: <%= find_user_ranking(@user, @users) %></p> -->
   <div class="col-sm-12">
     <div class="table-wrapper">
-      <h1> Pending Leads: </h1>
+      <h2> Pending Leads: </h2>
       <div class="scroll-me2">
         <table class="user-table table table-striped" style="width:100%">
         <tr class="table-header bg-grey light-font" id="table-header-green">
@@ -54,10 +56,10 @@
         <% end %>
         </table>
       </div>
-    <h1> Ongoing Leads: </h1>
+    <h2> Ongoing Leads: </h2>
     <div class="scroll-me2">
       <table class="user-table table table-striped" style="width:100%">
-      <tr class="table-header bg-grey light-font" id="table-header-green">
+      <tr class="table-header bg-grey light-font" id="table-header-yellow">
         <th class="user-th">Lead ID:</th>
         <th class="user-th">Name:</th>
         <th class="user-th">Email:</th>
@@ -86,10 +88,10 @@
       <% end %>
       </table>
     </div>
-    <h1> Previous Leads: </h1>
+    <h2> Previous Leads: </h2>
     <div class="scroll-me2">
       <table class="user-table table table-striped" style="width:100%">
-      <tr class="table-header bg-grey light-font" id="table-header-yellow">
+      <tr class="table-header bg-grey light-font" id="table-header-grey">
         <th class="user-th">Name:</th>
         <th class="user-th">Email:</th>
         <th class="user-th">Source:</th>

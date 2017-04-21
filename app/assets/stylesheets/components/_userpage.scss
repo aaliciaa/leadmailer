@@ -41,6 +41,11 @@
   text-align: left;
 }
 
+#table-header-grey {
+  background-color: #bdbdbd;
+  text-align: left;
+}
+
 .table > tbody > tr > th {
   vertical-align: middle;
 }
@@ -51,7 +56,7 @@
 
 .user-th {
   text-align: left;
-  height: 50px;
+  height: 40px;
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 2px;
@@ -105,6 +110,13 @@
   font-size: 11px;
 }
 
+.btn-grey {
+  margin-bottom: 11px;
+  background-color: $darkgrey;
+  border-color: $darkgrey;
+  font-size: 11px;
+}
+
 // Stats styling
 
 .stats-wrapper {
@@ -121,7 +133,7 @@
   font-weight: 300;
   font-size: 10px;
   letter-spacing: 2px;
-  border-bottom: 1px solid #67AAE1;
+  border-bottom: 3px solid #67AAE1;
   padding-bottom: 9px;
 }
 
@@ -145,27 +157,35 @@
 .avail-button {
   background-color: #97C05C;
   color: white;
-  padding: 6px 12px;
+  padding: 9px 29px;
   border-radius: 2px;
   margin: 12px 0px;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 1px;
 }
 
 .offline-button {
   background-color: #EE5F5B;
   color: white;
-  padding: 6px 12px;
+  padding: 9px 29px;
   border-radius: 2px;
   margin: 12px 0px;
-  font-size: 12px;
-  letter-spacing: 1px;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 
 .avail-button:hover {
   text-decoration: none;
 }
 
+.offline-button:hover {
+  text-decoration: none;
+}
+
 .avatar-wrapper {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
