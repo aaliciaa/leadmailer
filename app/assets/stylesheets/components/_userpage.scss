@@ -88,7 +88,7 @@
   width: 100%;
   padding: 18px 19px;
   margin-bottom: 10px;
-  height: calc(90vh - 70px);
+  // height: calc(90vh - 70px);
 }
 
 .scroll-me {
@@ -140,4 +140,22 @@
 
 .sidebar {
   background-color: $darkgrey;
+}
+
+.avail-button {
+  background-color: #EE5F5B;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 2px;
+  margin: 12px 0px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.avail-button:hover {
+  text-decoration: none;
+}
+
+.avatar-wrapper {
+  margin: 20px;
 }

@@ -62,7 +62,7 @@
                   <% @users.each do |user| %>
                     <tr class="user-tr">
                       <td class="user-td"><%= user.rank %></td>
-                      <td class="user-td"><%= user.name %></td>
+                      <td class="user-td"><%= link_to user.name, user_path(user) %></td>
                       <td class="user-td"><%= user.email %></td>
                       <td class="user-td">
                         <div class="checkbox">
