@@ -7,13 +7,11 @@
           <%= link_to @user.available ? "Available" : "Offline", toggle_availability_user_path(@user), method: :patch, class: "avail-button" %>
     </div>
 
-    <div class="stats-wrapper">
       <div class="bg-grey stats">
         <h2 class="light-font stat-header">Conversion Rate</h2>
-          <p class="stat-detail stat-number"><%= conversion_rate_for(@user) %>%</p>
+          <p class="stat-detail stat-number"><%= conversion_rate_for(@user) %> %</p>
       </div>
     </div>
-
 
     <div class="stats-wrapper">
       <div class="bg-grey stats">
