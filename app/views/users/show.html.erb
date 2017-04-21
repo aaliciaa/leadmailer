@@ -21,8 +21,8 @@
 
     <div class="stats-wrapper">
       <div class="bg-grey stats">
-        <h2 class="light-font stat-header">Avg Response Time:</h2>
-          <p class="stat-detail stat-number"><%= @user.leads.average(:response_time).round %> seconds</p>
+        <h2 class="light-font stat-header">Avg Response Time (mins):</h2>
+          <p class="stat-detail stat-number"><%= @user.leads.average(:response_time).round %></p>
       </div>
     </div>
   </div>
@@ -77,8 +77,8 @@
               <button class="btn btn-primary dropdown-toggle add-lead-btn" type="button" data-toggle="dropdown">Options
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "btn btn-primary table-dropdown" %></li>
-                <li><%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "btn btn-primary table-dropdown" %></li>
+                <li><%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
+                <li><%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
               </ul>
             </div>
         </td>
