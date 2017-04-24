@@ -1,0 +1,66 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 132px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #EE5F5B;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 2px;
+  color: white;
+  padding: 9px 29px;
+  font-size: 13px;
+  border-radius: 2px;
+  font-weight:normal;
+  letter-spacing: 2px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 5%;
+  color: white;
+}
+
+input:checked + .slider {
+  background-color: #97C05C;
+  color: white;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #97C05C;
+  color: white;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(98px);
+  -ms-transform: translateX(98px);
+  transform: translateX(98px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 2px;
+}
+
+.slider.round:before {
+  border-radius: 5%;
+}
