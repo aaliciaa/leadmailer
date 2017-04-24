@@ -16,6 +16,7 @@ module LeadsHelper
     ranking = []
     users.each do |user|
       ranking << {name: user.name, conversion: conversion_rate_for(user), rank: nil}
+#     ranking << {name: user.name, conversion: conversion_rate_for(user), photo: user.photo}
     end
     ranking.sort_by { |hsh| hsh[:conversion] }.reverse
     # result -> [{name: biz, conversion: 23, ranking: nil}, {}, {}]
