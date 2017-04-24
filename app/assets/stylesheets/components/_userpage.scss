@@ -48,10 +48,17 @@
 
 .table > tbody > tr > th {
   vertical-align: middle;
+  padding: 7px 9px;
 }
 
 .table > tbody > tr > td {
-     vertical-align: middle;
+  vertical-align: middle;
+  padding: 7px 9px;
+  height: 23px;
+}
+
+#rank-align {
+  text-align: center;
 }
 
 .user-th {
@@ -162,4 +169,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#status-green {
+  background-color: #97C05C;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+#status-red {
+  background-color: #EE5F5B;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+#status-yellow {
+  background-color: #f2bc4e;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
 }
