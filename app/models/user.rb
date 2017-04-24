@@ -8,5 +8,4 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  default_scope { order(rank: :asc) }
 end
