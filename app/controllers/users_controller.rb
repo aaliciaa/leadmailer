@@ -3,7 +3,11 @@ class UsersController < ApplicationController
 
   def index
     # @users = User.order(:name)
-    @users = User.all
+    if params[:order]
+      @users = User.order(params[:order].to_sym)
+    else
+      @users = User.all
+    end
     @leads = Lead.all
   end
 
