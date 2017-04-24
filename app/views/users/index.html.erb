@@ -1,5 +1,4 @@
 <!-- User index page -->
-
 <div class="page-fix">
   <div class="main-wrapper bg-light-grey">
     <div class="sidebar">
@@ -63,12 +62,15 @@
                 <table class="table table-striped" id="TableSort" style="width:100%">
 
                   <tr class="bg-grey light-font" id="table-header-green">
-                    <th class="user-th">Ranking <%= link_to "Sort by rank", users_path(order: "rank") %></th>
-                    <th class="user-th">Salesperson <%= link_to "Sort by name", users_path(order: "name") %></th>
-                    <th class="user-th">Email</th>
-                    <th class="user-th">Conversion Rate</th>
-                    <th class="user-th">Avg Response Time</th>
-                    <th class="user-th">Availability</th>
+                    <th class="user-th"> <%= link_to users_path(order: "rank") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Ranking<% end %></th>
+
+                    <th class="user-th"><%= link_to users_path(order: "name") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Salesperson<% end %></th>
+
+                    <th class="user-th"><%= link_to users_path(order: "email") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Email<% end %></th>
+
+                    <th class="user-th"><i class="fa fa-sort light-font" aria-hidden="true"></i>Conversion Rate</th>
+                    <th class="user-th"><i class="fa fa-sort light-font" aria-hidden="true"></i>Avg Response Time</th>
+                    <th class="user-th"><i class="fa fa-sort light-font" aria-hidden="true"></i>Availability</th>
                     <th class="user-th">Delete User</th>
                   </tr>
 
@@ -96,34 +98,6 @@
                             </label>
                           <% end %>
                         <% end %>
-
-                        <script>
-                        function sortTable() {
-                          var table, rows, switching, i, x, y, shouldSwitch;
-                          table = document.getElementById("TableSort");
-                          switching = true;
-                          while (switching) {
-                            switching = false;
-                            rows = table.getElementsByTagName("TR");
-                            for (i = 1; i < (rows.length - 1); i++) {
-                              shouldSwitch = false;
-                              x = rows[i].getElementsByTagName("TD")[1];
-                              y = rows[i + 1].getElementsByTagName("TD")[1];
-                              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                                shouldSwitch= true;
-                                break;
-                              }
-                            }
-                            if (shouldSwitch) {
-                              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                              switching = true;
-                            }
-                          }
-                        }
-                        </script>
-
-
-
                         </div>
                       </td>
 
