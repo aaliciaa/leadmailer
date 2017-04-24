@@ -19,9 +19,11 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
 alicia_leads = []
 8.times do
   lead_name = Faker::Name.name
+  email_name = lead_name.gsub!(/\s/, '.')
   lead = Lead.new(
     name: lead_name,
-    email: "#{lead_name}@outlook.com",
+    email: "#{email_name}@outlook.com",
+    phone: Faker::PhoneNumber.cell_phone,
     received_at: Time.now(),
     status: "pending",
     user: alicia,
@@ -57,9 +59,11 @@ taryn = User.create(name: "Taryn Baron", email: "taryn.baron@hotmail.com", passw
 nicole = User.create(name: "Nicole Smith", email: "nicole.smith@hotmail.com", password: "123456", photo: "QS_0067.jpg", rank: nil)
 5.times do
   lead_name = Faker::Name.name
+  email_name = lead_name.gsub!(/\s/, '.')
   nicole_lead = Lead.new(
   name: lead_name,
-  email: "#{lead_name}@outlook.com",
+  email: "#{email_name}@outlook.com",
+  phone: Faker::PhoneNumber.cell_phone,
   received_at: Time.now(),
   status: "pending",
   user: nicole,
@@ -73,9 +77,11 @@ christie = User.create(name: "Christie Clark", email: "christie.clark@hotmail.co
 christie_leads = []
 8.times do
   lead_name = Faker::Name.name
+  email_name = lead_name.gsub!(/\s/, '.')
   christie_lead = Lead.new(
   name: lead_name,
-  email: "#{lead_name}@outlook.com",
+  email: "#{email_name}@outlook.com",
+  phone: Faker::PhoneNumber.cell_phone,
   received_at: Time.now(),
   status: "pending",
   user: christie,
