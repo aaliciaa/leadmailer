@@ -15,11 +15,12 @@ module LeadsHelper
   def calculate_ranking(users)
     ranking = []
     users.each do |user|
-      ranking << {name: user.name, conversion: conversion_rate_for(user), photo: user.photo}
+      ranking << {name: user.name, conversion: conversion_rate_for(user), rank: nil}
+#     ranking << {name: user.name, conversion: conversion_rate_for(user), photo: user.photo}
     end
     ranking.sort_by { |hsh| hsh[:conversion] }.reverse
-    # result -> [{name: biz, conversion: 23, ranking: 1}, {}, {}]
-    # ranking.map { |hsh| hsh[:conversion] matrix.find_index { |salesperson| salesperson[:name] == user.name } + 1 }
+    # result -> [{name: biz, conversion: 23, ranking: nil}, {}, {}]
+    # ranking.map.with_index { |hsh, i| { name: hsh[:name], conversion: hsh[:conversion], rank: (i + 1) } }
   end
 
   def conversion_rate_for(user)
@@ -35,6 +36,15 @@ module LeadsHelper
   def find_user_ranking(user, users)
     ranking_matrix = calculate_ranking(users)
     ranking = ranking_matrix.find_index { |salesperson| salesperson[:name] == user.name } + 1
-    # ranking = ranking_matrix.find_position(user.name)
+  end
+
+  def store_user_rankings(users)
+    # users -> User.all -> this is all you need to access this method
+    # calculate rankings, result -> [{name: biz, conversion: 23, ranking: 1}, ...]
+    rankings = calculate_ranking(users)
+    # store ranking to user instance
+    users.each do |user|
+      user.rank = rankings.find_index { |salesperson| salesperson[:name] == user.name } + 1
+    end
   end
 end

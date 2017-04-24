@@ -45,12 +45,36 @@ class UsersController < ApplicationController
   end
 
   def toggle_availability
-    # Click to update availability (Link_to in show)
+    if @user.available
+      remove_from_lineup(@user)
+    else # false to true
+      add_to_lineup(@user)
+    end
     @user.toggle!(:available)
-
     redirect_to :back
-    # Remove or add from lead rotation
   end
+
+
+  # lineup methods
+
+  def add_to_lineup(user)
+    # user becomes available OR add new user
+    bumped_lineup = Lineup.first.lineup
+    bumped_lineup << user
+    Lineup.destroy_all
+    Lineup.create(:lineup => bumped_lineup)
+  end
+
+  def remove_from_lineup(user)
+    # user becomes UN-available OR user is deleted
+    bumped_index = Lineup.first.lineup.find_index(user)
+    bumped_lineup = Lineup.first.lineup
+    bumped_lineup.delete_at(bumped_index)
+    Lineup.destroy_all
+    Lineup.create(:lineup => bumped_lineup)
+  end
+
+
 
 private
 
