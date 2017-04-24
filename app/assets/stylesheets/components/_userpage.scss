@@ -12,6 +12,10 @@
   text-align: left;
 }
 
+.table {
+  table-layout: fixed;
+}
+
 .table-button {
   height: 30px;
   font-size: 11px;
@@ -55,6 +59,8 @@
   vertical-align: middle;
   padding: 7px 9px;
   height: 23px;
+  // word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 #rank-align {
@@ -97,7 +103,7 @@
 
 .table-wrapper {
   // height: 85vh;
-  width: 100%;
+  width: auto;
   padding: 35px;
   margin-bottom: 10px;
   // height: calc(90vh - 70px);
@@ -191,6 +197,15 @@
 
 #status-yellow {
   background-color: #f2bc4e;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+#status-blue {
+  background-color: $brand-primary;
   border-radius: 3px;
   font-size: 10px;
   color: #fff;

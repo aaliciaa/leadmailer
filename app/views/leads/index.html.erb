@@ -46,7 +46,7 @@
     <div class="col-xs-12">
       <div class="table-wrapper">
       <ul class="list-inline">
-      <li><h1>Active Leads Status</h1></li>
+      <li><h1>Monthly Leads Status</h1></li>
       <!-- Manually Create Lead -->
       <li><%= link_to "Add Lead", new_lead_path, class: "btn btn-primary add-lead-btn" %></li>
           <div class="scroll-me">
@@ -74,6 +74,9 @@
               </div>
             <% elsif lead.status == "pending" %>
               <div id="status-yellow"> <%= lead.status.capitalize %></td>
+              </div>
+            <% elsif lead.status == "accepted" %>
+              <div id="status-blue"> <%= lead.status.capitalize %></td>
               </div>
             <% else lead.status == "lost" %>
               <div id="status-red"> <%= lead.status.capitalize %></td>
