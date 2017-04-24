@@ -176,7 +176,7 @@ class LeadsController < ApplicationController
 private
 
   def lead_params
-    params.require(:lead).permit(:name, :email, :received_at, :accepted_at, :status, :source, :user_id)
+    params.require(:lead).permit(:name, :email, :received_at, :accepted_at, :status, :source, :user_id, :phone)
   end
 
   def set_lead

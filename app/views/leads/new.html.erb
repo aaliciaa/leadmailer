@@ -7,6 +7,7 @@
         <%= simple_form_for @lead do |f| %>
           <%= f.input :name %>
           <%= f.input :email %>
+          <%= f.input :phone %>
           <%= f.input :source %>
           <%= f.association :user %>
           <%= f.button :submit, class: "btn btn-primary" %>
@@ -17,14 +18,3 @@
 </div>
 
 
- <!-- "name"
-    t.string   "email"
-    t.string   "recieved_at"
-    t.string   "accepted_at"
-    t.string   "status"
-    t.string   "source"
-    t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.float    "response_time"
- -->
