@@ -3,7 +3,14 @@
     <div class="stats-wrapper">
       <div class="bg-grey stats">
         <h2 class="light-font stat-header">Conversion Rate</h2>
-        <p class="stat-detail stat-number"><%= global_conversion_rate_for(@leads.where(status: "settled"), @leads) %>%</p>
+        <div class="spinner" id="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+          </div>
+        <p class="stat-detail stat-number hidden" id="conversion-rate"><%= global_conversion_rate_for(@leads.where(status: "settled"), @leads) %>%</p>
       </div>
     </div>
 
