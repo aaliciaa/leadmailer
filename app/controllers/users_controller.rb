@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     if params[:order]
       @users = User.order(params[:order].to_sym)
     else
-      @users = User.all
+      @users = User.order(rank: :asc)
     end
     @leads = Lead.all
   end

@@ -7,5 +7,4 @@ class Lead < ApplicationRecord
   validates :phone, presence: true
   validates :source, presence: true
   validates :status, inclusion: { in: ["pending","accepted","settled","lost"], allow_nil: false }
-
 end
