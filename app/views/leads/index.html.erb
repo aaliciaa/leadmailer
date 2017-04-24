@@ -53,13 +53,20 @@
             <table class="table table-striped" style="width:100%">
 
           <tr class="bg-grey light-font table-font" id="table-header-grey">
-            <th class="user-th">Received</th>
-            <th class="user-th">Status</th>
-            <th class="user-th">Salesperson</th>
-            <th class="user-th">Contact Name</th>
-            <th class="user-th">Contact Email</th>
-            <th class="user-th">Contact Phone</th>
-            <th class="user-th">Source</th>
+            <th class="user-th"><%= link_to leads_path(order: "received_at") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Received <% end %></th>
+
+            <th class="user-th"><%= link_to leads_path(order: "status") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Status <% end %></th>
+
+            <th class="user-th"><i class="fa fa-sort light-font" aria-hidden="true"></i>Salesperson</th>
+
+            <th class="user-th"><%= link_to leads_path(order: "name") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Contact Name <% end %></th>
+
+            <th class="user-th"><%= link_to leads_path(order: "email") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Contact Email <% end %></th>
+
+            <th class="user-th"><%= link_to leads_path(order: "phone") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Contact Phone <% end %></th>
+
+            <th class="user-th"><%= link_to leads_path(order: "source") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Source <% end %></th>
+
             <th class="user-th"></th>
             <th class="user-th"></th>
             <th class="user-th"></th>

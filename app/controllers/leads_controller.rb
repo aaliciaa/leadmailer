@@ -2,9 +2,14 @@ class LeadsController < ApplicationController
   before_action :set_lead, only: [:edit, :update, :destroy, :mark_as_settled, :mark_as_lost, :mark_as_accepted]
 
   def index
-    @leads = Lead.order(received_at: :desc)
+    if params[:order]
+      @leads = Lead.order(params[:order].to_sym)
+    else
+      @leads = Lead.order(received_at: :desc)
+    end
     @users = User.all
   end
+
 
   def new
     @lead = Lead.new
