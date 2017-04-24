@@ -156,34 +156,6 @@
   background-color: $darkgrey;
 }
 
-.avail-button {
-  background-color: #97C05C;
-  color: white;
-  padding: 9px 29px;
-  border-radius: 2px;
-  margin: 12px 0px;
-  font-size: 13px;
-  letter-spacing: 1px;
-}
-
-.offline-button {
-  background-color: #EE5F5B;
-  color: white;
-  padding: 9px 29px;
-  border-radius: 2px;
-  margin: 12px 0px;
-  font-size: 13px;
-  letter-spacing: 2px;
-}
-
-.avail-button:hover {
-  text-decoration: none;
-}
-
-.offline-button:hover {
-  text-decoration: none;
-}
-
 .avatar-wrapper {
   margin: 20px;
   display: flex;

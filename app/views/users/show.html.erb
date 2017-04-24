@@ -1,16 +1,34 @@
 <div class="main-wrapper bg-light-grey">
   <div class="sidebar">
     <div class="avatar-wrapper">
-          <%= image_tag @user.photo, class: "avatar-large" %>
-          <h3 class="light-font"><%= @user.name %></h3>
-         <!--  <p><%= @user.available ? "Available" : "Offline" %></p> -->
-<!--           <div class="col-md-6 col-md-offset-3 button-margin"> -->
-            <% if @user.available %>
-              <%= link_to "AVAILABLE", toggle_availability_user_path(@user), method: :patch, class: "avail-button" %>
-            <% else %>
-              <%= link_to "OFFLINE", toggle_availability_user_path(@user), method: :patch, class: "offline-button" %>
-            <% end %>
-          <!-- </div> -->
+      <%= image_tag @user.photo, class: "avatar-large" %>
+      <h3 class="light-font"><%= @user.name %></h3>
+      <!--   <div class="col-md-6 col-md-offset-3 button-margin"> -->
+
+
+        <!-- Original toggle button -->
+        <% if @user.available %>
+          <%= link_to toggle_availability_user_path(@user), method: :patch do %>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <div class="slider"><div class="ontext2">ONLINE</div></div>
+            </label>
+          <% end %>
+        <% else %>
+          <%= link_to toggle_availability_user_path(@user), method: :patch do %>
+            <label class="switch">
+              <input type="checkbox">
+              <div class="slider"><div class="offtext">OFFLINE</div></div>
+            </label>
+          <% end %>
+
+        <% end %>
+
+        <!-- New toggle slider -->
+
+
+
+      <!-- </div> -->
     </div>
 
 
