@@ -8,6 +8,8 @@
 .switch2 input {display:none;}
 
 .slider2 {
+  height: 26px;
+  width: 90px;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -31,10 +33,10 @@
 .slider2:before {
   position: absolute;
   content: "";
-  height: 16px;
-  width: 16px;
-  left: 2px;
-  bottom: 2px;
+  height: 18px;
+  width: 19px;
+  left: 5px;
+  bottom: 4px;
   background-color: white;
   -webkit-transition: .5s;
   transition: .5s;
@@ -78,10 +80,16 @@ input:checked + .slider2:before {
 
 .ontext2 {
   position: absolute;
+  left: 10px;
+  top: 6px;
   margin-right: 50px;
   text-align: left;
+  font-size: 10px;
 }
 
 .offtext2 {
-  margin-left: 10px;
+  font-size: 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
