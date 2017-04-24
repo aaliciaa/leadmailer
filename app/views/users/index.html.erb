@@ -66,15 +66,19 @@
                     <th class="user-th">Ranking</th>
                     <th class="user-th">Salesperson</th>
                     <th class="user-th">Email</th>
+                    <th class="user-th">Conversion Rate</th>
+                    <th class="user-th">Avg Response Time</th>
                     <th class="user-th">Unavailable</th>
                     <th class="user-th">Delete User</th>
                   </tr>
 
                   <% @users.each do |user| %>
                     <tr class="user-tr">
-                      <td class="user-td"><%= user.rank %></td>
+                      <td class="user-td" id="rank-align"><%= user.rank %></td>
                       <td class="user-td"><%= link_to user.name, user_path(user) %></td>
                       <td class="user-td"><%= user.email %></td>
+                      <td class="user-td" id="rank-align"><%= conversion_rate_for(user) %> %</td>
+                      <td class="user-td" id="rank-align"><%= user.leads.average(:response_time) ? user.leads.average(:response_time).round : "n/a" %> mins</td>
                       <td class="user-td">
                         <div class="checkbox">
                           <%= availability_status_for(user) %> (<%= link_to "Update status", toggle_availability_user_path(user), method: :patch%>)

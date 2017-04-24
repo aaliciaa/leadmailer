@@ -58,6 +58,7 @@
             <th class="user-th">Salesperson</th>
             <th class="user-th">Contact Name</th>
             <th class="user-th">Contact Email</th>
+            <th class="user-th">Contact Phone</th>
             <th class="user-th">Source</th>
             <th class="user-th"></th>
             <th class="user-th"></th>
@@ -67,10 +68,21 @@
           <% @leads.each do |lead| %>
           <tr class="user-tr">
             <td class="user-td"><%= lead.created_at %></td>
-            <td class="user-td"><%= lead.status.capitalize %></td>
+            <td class="user-td">
+            <% if lead.status == "settled" %>
+              <div id="status-green"> <%= lead.status.capitalize %></td>
+              </div>
+            <% elsif lead.status == "pending" %>
+              <div id="status-yellow"> <%= lead.status.capitalize %></td>
+              </div>
+            <% else lead.status == "lost" %>
+              <div id="status-red"> <%= lead.status.capitalize %></td>
+              </div>
+            <% end %>
             <td class="user-td"><%= link_to lead.user.name, user_path(lead.user) %></td>
             <td class="user-td"><%= lead.name %></td>
             <td class="user-td"><%= lead.email %></td>
+            <td class="user-td"><%= lead.phone %></td>
             <td class="user-td"><%= lead.source %></td>
             <td class="user-td">
             <div class="drpdwn">
