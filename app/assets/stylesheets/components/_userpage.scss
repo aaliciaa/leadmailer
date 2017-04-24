@@ -127,6 +127,8 @@
   padding: 20px;
   width: auto;
   height: 132px;
+  display: flex;
+  flex-direction: column;
 }
 
 .stat-header {

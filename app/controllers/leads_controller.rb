@@ -83,28 +83,11 @@ class LeadsController < ApplicationController
 
 
 
-  # User Lineup
 
-  def get_lineup(users)
-    if Lineup.count < 1 || Lineup.first.lineup == nil
-      lineup = []
-      lineup = users.select do |user|
-        user.available
-      end
-      Lineup.create(:lineup => lineup)
-    end
-    Lineup.first.lineup
-  end
 
   # Edit Lineup
 
-  def bump_lineup
-    # from user from 1st pos to last
-    # not sure if this rotate works they way I think it does -revisit
-    bumped_lineup = Lineup.first.lineup.rotate(1)
-    Lineup.destroy_all
-    Lineup.create(:lineup => bumped_lineup)
-  end
+
 
 
 
@@ -119,7 +102,7 @@ class LeadsController < ApplicationController
     @lead = Lead.new(lead_params)
     @lead.received_at = DateTime.now()
     @lead.status = "pending"
-    get_lineup(User.all)
+    Lineup.build(User.all)
     @lead.user_id = assign_user(@lead.email).id
     @lead.save
     redirect_to leads_path
@@ -129,8 +112,9 @@ class LeadsController < ApplicationController
     if Lead.where(email: input_email).last
       Lead.where(email: input_email).last.user
     else
-      assignment = Lineup.first.lineup[0]
-      bump_lineup
+      lineup = Lineup.first
+      assignment = lineup.lineup[0]
+      lineup.bump
       assignment
     end
   end
