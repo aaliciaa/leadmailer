@@ -12,7 +12,9 @@
         <h2 class="light-font stat-header">Rank #1</h2>
         <h2 class="stat-detail"><%= calculate_ranking(@users).first[:name] %> </h2>
         <!-- INSERT AVATAR HERE -->
-        <%= image_tag calculate_ranking(@users).first[:photo], class: "center-block avatar" %>
+        <% top_name = calculate_ranking(@users).first[:name] %>
+        <% top_user = User.where(name: top_name) %>
+        <%= image_tag top_user.first.photo, class: "center-block avatar" %>
       </div>
     </div>
 
