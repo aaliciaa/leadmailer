@@ -76,9 +76,13 @@ input:checked + .slider:before {
 }
 
 .ontext {
-  margin-right: 50px;
+  position: absolute;
+  left: 22px;
+  top: 8px;
 }
 
 .offtext {
-  margin-left: 20px;
+  margin-left: 16px;
+  position: absolute;
+  top: 8px;
 }
