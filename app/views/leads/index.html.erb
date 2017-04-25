@@ -89,7 +89,7 @@
               <div id="status-red"> <%= lead.status.capitalize %></td>
               </div>
             <% end %>
-            <td class="user-td" id="grey-column"><%= link_to lead.user.name, user_path(lead.user) %></td>
+            <td class="user-td"><%= link_to lead.user.name, user_path(lead.user) %></td>
             <td class="user-td"><%= lead.name %></td>
             <td class="user-td"><%= lead.email %></td>
             <td class="user-td"><%= lead.phone %></td>
