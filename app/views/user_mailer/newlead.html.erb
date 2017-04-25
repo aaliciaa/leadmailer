@@ -3,3 +3,8 @@
 <p>Hi <%= @user.name %>, you have a new lead!</p>
 
 <p>Please click to ACCEPT and get Lead Details.</p>
+
+<p>Need to figure out how to get access to lead object</p>
+<p><%= link_to "Accept Lead", accept_through_email_url(@lead), method: :patch, class: "btn btn-primary add-lead-btn" %> </p>
+
+
