@@ -8,6 +8,11 @@ class LeadsController < ApplicationController
       @leads = Lead.order(received_at: :desc)
     end
     @users = User.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @leads.to_csv, filename: "leadmailer-leads-#{Date.today}.csv" }
+    end
   end
 
 
@@ -83,11 +88,6 @@ class LeadsController < ApplicationController
     store_user_rankings(@users)
     redirect_to :back
   end
-
-
-
-
-
 
 
   # Edit Lineup
