@@ -17,7 +17,7 @@
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-    <h2 id="welcome-message">Welcome <%= current_user.name.split.first %>!</h2>
+    <h3 id="welcome-message"> <%= greet %> <%= current_user.name.split.first %>!</h3>
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
