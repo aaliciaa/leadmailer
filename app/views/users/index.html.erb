@@ -1,5 +1,4 @@
 <!-- User index page -->
-
 <div class="page-fix">
   <div class="main-wrapper bg-light-grey">
     <div class="sidebar">
@@ -38,7 +37,7 @@
       <div class="stats-wrapper">
         <div class="bg-grey stats">
           <h2 class="light-font stat-header">Avg Response Time (mins):</h2>
-          <p class="stat-detail"><%= (Lead.average(:response_time) / 60).round %></p>
+          <p class="stat-detail stat-number"><%= (Lead.average(:response_time) / 60).round %></p>
         </div>
       </div>
     </div>
@@ -55,29 +54,54 @@
                   <h1>Sales Team Management</h1>
                 </li>
                 <li>
-                  <%= link_to "Add Salesperson", new_user_path, class: "btn btn-primary add-lead-btn" %>
+                  <%= link_to "Add Salesperson", new_user_path, class: "btn btn-primary add-lead-btn", id: "bottom-button-margin" %>
                 </li>
               </ul>
+            <div class="next-lead-box">
+              <%= image_tag("blue-icon.png", size: "30x18", alt: "Mail Icon") %>
+              <h3>The next lead will be forwarded to: <b><%= Lineup.first.lineup.first.name %></b></h3>
+            </div>
               <!-- Main table of employees -->
               <div class="scroll-me">
-                <table class="table table-striped" style="width:100%">
+                <table class="table table-striped" id="TableSort" style="width:100%">
 
                   <tr class="bg-grey light-font" id="table-header-green">
-                    <th class="user-th">Ranking</th>
-                    <th class="user-th">Salesperson</th>
-                    <th class="user-th">Email</th>
-                    <th class="user-th">Unavailable</th>
+                    <th class="user-th rank-width"> <%= link_to users_path(order: "rank") do %>Rank<i class="fa fa-sort light-font" aria-hidden="true"></i><% end %></th>
+
+                    <th class="user-th"><%= link_to users_path(order: "name") do %>Salesperson<i class="fa fa-sort light-font" aria-hidden="true"></i><% end %></th>
+
+                    <th class="user-th"><%= link_to users_path(order: "email") do %>Email<i class="fa fa-sort light-font" aria-hidden="true"></i><% end %></th>
+
+                    <th class="user-th">Conversion Rate</th>
+                    <th class="user-th">Avg Response Time</th>
+                    <th class="user-th avail-width">Availability</th>
                     <th class="user-th">Delete User</th>
                   </tr>
 
                   <% @users.each do |user| %>
                     <tr class="user-tr">
-                      <td class="user-td"><%= user.rank %></td>
+                      <td class="user-td" id="rank-align"><%= user.rank %></td>
                       <td class="user-td"><%= link_to user.name, user_path(user) %></td>
                       <td class="user-td"><%= user.email %></td>
+                      <td class="user-td" id="rank-align"><%= conversion_rate_for(user) %> %</td>
+                      <td class="user-td" id="rank-align"><%= user.leads.average(:response_time) ? user.leads.average(:response_time).round : "n/a" %> mins</td>
                       <td class="user-td">
-                        <div class="checkbox">
-                          <%= availability_status_for(user) %> (<%= link_to "Update status", toggle_availability_user_path(user), method: :patch%>)
+
+                        <% if user.available %>
+                          <%= link_to toggle_availability_user_path(user), method: :patch do %>
+                            <label class="switch2">
+                              <input type="checkbox" checked>
+                              <div class="slider2"><div class="ontext2">ONLINE</div></div>
+                            </label>
+                          <% end %>
+                        <% else %>
+                          <%= link_to toggle_availability_user_path(user), method: :patch do %>
+                            <label class="switch2">
+                              <input type="checkbox">
+                              <div class="slider2"><div class="offtext2">OFFLINE</div></div>
+                            </label>
+                          <% end %>
+                        <% end %>
                         </div>
                       </td>
 

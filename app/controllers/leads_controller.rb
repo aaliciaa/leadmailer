@@ -3,9 +3,19 @@ class LeadsController < ApplicationController
   # rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
-    @leads = Lead.order(received_at: :desc)
+    if params[:order]
+      @leads = Lead.order(params[:order].to_sym)
+    else
+      @leads = Lead.order(received_at: :desc)
+    end
     @users = User.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @leads.to_csv, filename: "leadmailer-leads-#{Date.today}.csv" }
+    end
   end
+
 
   def new
     @lead = Lead.new
@@ -85,9 +95,7 @@ class LeadsController < ApplicationController
     store_user_rankings(@users)
     redirect_to :back
   end
-
-
-
+  
 
 
   # Simulate Incoming Email:

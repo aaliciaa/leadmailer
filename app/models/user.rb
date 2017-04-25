@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :leads
 
   validates :name, presence: true, uniqueness: true
+
 end
