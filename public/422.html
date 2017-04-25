@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   body {
-    background-color: #EFEFEF;
+    background-color: #252525;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
@@ -23,17 +23,17 @@
     border-right-color: #999;
     border-left-color: #999;
     border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
+    border-top: #5bbce9 solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
     background-color: white;
-    padding: 7px 12% 0;
+    padding: 17px 10px;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
 
   h1 {
     font-size: 100%;
-    color: #730E15;
+    color: #grey;
     line-height: 1.5em;
   }
 
@@ -51,6 +51,15 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+    .error-btn {
+    background: #5bbce9;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+  }
   </style>
 </head>
 
@@ -58,8 +67,11 @@
   <!-- This file lives in public/422.html -->
   <div class="dialog">
     <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
+    <img src="http://res.cloudinary.com/dlu3zjge1/image/upload/v1493097619/home-logo_kx755d.png" alt="Lead Mailer Logo">
+      <h1>Oops, you are not authorised to make this change!</h1>
+      <p>Please ask your manager to change your accessibility rights.</p>
+      <img src="http://res.cloudinary.com/dlu3zjge1/image/upload/v1493105215/homer_vbzily.jpg" alt="Homer" alt="Homer">
+      <a href="/" class="error-btn">Return to homepage</a>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
   </div>

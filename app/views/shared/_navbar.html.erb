@@ -15,10 +15,9 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-
-
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
+    <h3 id="welcome-message"> <%= greet %> <%= current_user.name.split.first %>!</h3>
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
@@ -27,13 +26,13 @@
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <%= link_to root_path do %>
+                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+              <%= link_to current_user do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
             <li>
@@ -53,7 +52,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Export Leads"), "#", class: "navbar-wagon-item btn btn-primary", id: "nav-button" %>
+    <%= link_to t(".top_call_to_action", default: "Export Leads"), "/leads.csv", class: "navbar-wagon-item btn btn-primary", id: "nav-button" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

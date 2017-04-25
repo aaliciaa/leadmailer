@@ -12,6 +12,11 @@
   text-align: left;
 }
 
+.table {
+  table-layout: fixed;
+
+}
+
 .table-button {
   height: 30px;
   font-size: 11px;
@@ -48,10 +53,21 @@
 
 .table > tbody > tr > th {
   vertical-align: middle;
+  padding: 7px 9px;
+  font-size: 11px;
+  text-align: center;
 }
 
 .table > tbody > tr > td {
-     vertical-align: middle;
+  vertical-align: middle;
+  padding: 7px 9px;
+  height: 23px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#rank-align {
+  text-align: center;
 }
 
 .user-th {
@@ -62,6 +78,13 @@
   letter-spacing: 2px;
   padding-left: 14px;
   vertical-align: middle;
+  a {
+    text-decoration: none;
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 .pad-left-plz {
@@ -81,6 +104,7 @@
   text-align: left;
   padding-left: 14px;
   vertical-align: middle;
+  // white-space: pre;
 }
 
 .user-td-center {
@@ -90,7 +114,7 @@
 
 .table-wrapper {
   // height: 85vh;
-  width: 100%;
+  width: auto;
   padding: 35px;
   margin-bottom: 10px;
   // height: calc(90vh - 70px);
@@ -104,7 +128,13 @@
 
 // User Buttons
 .add-lead-btn {
-  margin-bottom: 11px;
+  background-color: #53b8e9;
+  border-color: none;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.table-button {
   background-color: #53b8e9;
   border-color: none;
   font-size: 11px;
@@ -126,7 +156,7 @@
 .stats {
   padding: 20px;
   width: auto;
-  height: 132px;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -156,34 +186,6 @@
   background-color: $darkgrey;
 }
 
-.avail-button {
-  background-color: #97C05C;
-  color: white;
-  padding: 9px 29px;
-  border-radius: 2px;
-  margin: 12px 0px;
-  font-size: 13px;
-  letter-spacing: 1px;
-}
-
-.offline-button {
-  background-color: #EE5F5B;
-  color: white;
-  padding: 9px 29px;
-  border-radius: 2px;
-  margin: 12px 0px;
-  font-size: 13px;
-  letter-spacing: 2px;
-}
-
-.avail-button:hover {
-  text-decoration: none;
-}
-
-.offline-button:hover {
-  text-decoration: none;
-}
-
 .avatar-wrapper {
   margin: 20px;
   display: flex;
@@ -191,3 +193,96 @@
   justify-content: center;
   align-items: center;
 }
+
+#status-green {
+  background-color: #97C05C;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+#status-red {
+  background-color: #EE5F5B;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+#status-yellow {
+  background-color: #f2bc4e;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+#status-blue {
+  background-color: $brand-primary;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+.fa-unsorted:before, .fa-sort:before {
+  padding: 4px;
+}
+
+.x-margin {
+  margin: 0 20px;
+}
+
+.status-width {
+  width: 79px;
+}
+
+.sales-width {
+  width: 121px;
+}
+
+.options-width {
+  width: 82px;
+}
+
+.source-width {
+  width: 84px;
+}
+
+.rank-width {
+ width: 80px;
+}
+
+.avail-width {
+  width: 80px;
+}
+
+#welcome-message {
+  color: #E6E7E8;
+  margin-top: 13px;
+}
+
+.next-lead-box {
+  color: #252525;
+  padding: 2px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: center;
+  h3 {
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 300;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  }
+}
+

@@ -1,18 +1,25 @@
 <div class="main-wrapper bg-light-grey">
   <div class="sidebar">
     <div class="avatar-wrapper">
-          <%= image_tag @user.photo, class: "avatar-large" %>
-          <h3 class="light-font"><%= @user.name %></h3>
-         <!--  <p><%= @user.available ? "Available" : "Offline" %></p> -->
-<!--           <div class="col-md-6 col-md-offset-3 button-margin"> -->
-            <% if @user.available %>
-              <%= link_to "AVAILABLE", toggle_availability_user_path(@user), method: :patch, class: "avail-button" %>
-            <% else %>
-              <%= link_to "OFFLINE", toggle_availability_user_path(@user), method: :patch, class: "offline-button" %>
-            <% end %>
-          <!-- </div> -->
+      <%= image_tag @user.photo, class: "avatar-large" %>
+      <h3 class="light-font"><%= @user.name %></h3>
+      <!-- New toggle slide -->
+      <% if @user.available %>
+        <%= link_to toggle_availability_user_path(@user), method: :patch do %>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <div class="slider"><div class="ontext">ONLINE</div></div>
+          </label>
+        <% end %>
+      <% else %>
+        <%= link_to toggle_availability_user_path(@user), method: :patch do %>
+          <label class="switch">
+            <input type="checkbox">
+            <div class="slider"><div class="offtext">OFFLINE</div></div>
+          </label>
+        <% end %>
+      <% end %>
     </div>
-
 
     <div class="stats-wrapper">
       <div class="bg-grey stats">
@@ -47,7 +54,7 @@
     <div class="table-wrapper">
       <h2> Pending Leads: </h2>
       <div class="scroll-me2">
-        <table class="user-table table table-striped" style="width:100%">
+        <table class="user-table table-striped" style="width:100%">
         <tr class="table-header bg-grey light-font" id="table-header-green">
           <th class="user-th"></th>
           <th class="user-th">Lead ID:</th>
@@ -56,10 +63,10 @@
         </tr>
         <% @pending_leads.each do |lead| %>
         <tr class="user-tr">
-          <td class="user-td"><%= link_to "Accept", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary add-lead-btn" %></td>
+          <td class="user-td"><%= link_to "Accept", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary table-button" %></td>
           <td class="user-td">000<%= lead.id %></td>
           <td class="user-td"><%= lead.status.capitalize %></td>
-          <td class="user-td"><%= time_ago_in_words(User.first.leads.first.created_at) %> ago (<%= lead.created_at %>)</td>
+          <td class="user-td"><%= lead.created_at.strftime("%d/%m/%y at %I:%M%p") %> (<%= time_ago_in_words(User.first.leads.first.created_at) %> ago)</td>
         </tr>
         <% end %>
         </table>
@@ -71,6 +78,7 @@
         <th class="user-th">Lead ID:</th>
         <th class="user-th">Name:</th>
         <th class="user-th">Email:</th>
+        <th class="user-th">Phone:</th>
         <th class="user-th">Source:</th>
         <th class="user-th">Generated:</th>
         <th class="user-th">Outcome:</th>
@@ -80,11 +88,12 @@
         <td class="user-td">000<%= lead.id %></td>
         <td class="user-td"><%= lead.name %></td>
         <td class="user-td"><%= lead.email %></td>
+        <td class="user-td"><%= lead.phone %></td>
         <td class="user-td"><%= lead.source %></td>
-        <td class="user-td"><%= lead.created_at %></td>
+        <td class="user-td"><%= lead.created_at.strftime("%d/%m/%y at %I:%M%p") %></td>
         <td class="user-td">
             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle add-lead-btn" type="button" data-toggle="dropdown">Options
+              <button class="btn btn-primary dropdown-toggle table-button" type="button" data-toggle="dropdown">Options
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <li><%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
@@ -102,6 +111,7 @@
       <tr class="table-header bg-grey light-font" id="table-header-grey">
         <th class="user-th">Name:</th>
         <th class="user-th">Email:</th>
+        <th class="user-th">Phone:</th>
         <th class="user-th">Source:</th>
         <th class="user-th">Generated:</th>
         <th class="user-th">Result:</th>
@@ -110,8 +120,9 @@
       <tr class="user-tr">
         <td class="user-td"><%= lead.name %></td>
         <td class="user-td"><%= lead.email %></td>
+        <td class="user-td"><%= lead.phone %></td>
         <td class="user-td"><%= lead.source %></td>
-        <td class="user-td"><%= lead.created_at %></td>
+        <td class="user-td"><%= lead.created_at.strftime("%d/%m/%y at %I:%M%p") %></td>
         <td class="user-td"><%= lead.status.capitalize %></td>
       </tr>
       <% end %>
