@@ -8,7 +8,7 @@ Team members:
 - Chris Hutchinson
 <br><br>
 
-[Leadmailer](https://www.leadmailer.pro)<br>
+[Leadmailer](http://www.leadmailer.pro)<br>
 The website we worked on after just 2 months of training.
 <br><br>
 
