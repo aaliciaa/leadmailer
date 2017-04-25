@@ -14,6 +14,7 @@
 
 .table {
   table-layout: fixed;
+
 }
 
 .table-button {
@@ -59,7 +60,7 @@
   vertical-align: middle;
   padding: 7px 9px;
   height: 23px;
-  // word-wrap: break-word;
+  word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
@@ -101,6 +102,7 @@
   text-align: left;
   padding-left: 14px;
   vertical-align: middle;
+  // white-space: pre;
 }
 
 .user-td-center {
@@ -218,4 +220,12 @@
   color: #fff;
   padding: 5px;
   text-align: center;
+}
+
+.fa-unsorted:before, .fa-sort:before {
+  padding: 4px;
+}
+
+.x-margin {
+  margin: 0 20px;
 }
