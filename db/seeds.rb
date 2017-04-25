@@ -309,7 +309,7 @@ christopher = User.create(name: "Chris Hutchinson", email: "leadmailertest@gmail
 2.times do
   lead_name = Faker::Name.name
   email_name = lead_name.gsub!(/\s/, '.')
-  nathan_lead = Lead.new(
+  christopher_lead = Lead.new(
   name: lead_name,
   email: "#{email_name}@outlook.com",
   phone: Faker::PhoneNumber.cell_phone,
@@ -319,6 +319,9 @@ christopher = User.create(name: "Chris Hutchinson", email: "leadmailertest@gmail
   source: "Car Kijiji"
   )
   christopher_lead.save!
-  christopher_leads << christopher_lead
 end
+
+# build the initial lineup
+Lineup.build(User.all)
+
 

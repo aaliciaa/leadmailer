@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+
+  post "webhooks/postmark", to: "webhooks#postmark"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :leads, only: [:index, :new, :create, :edit, :update, :destroy] do
     member do
@@ -21,5 +23,6 @@ Rails.application.routes.draw do
   get 'styleguide', to: 'pages#styleguide'
   get 'simulate_email', to: 'leads#create_from_email'
   patch 'create_simulate_email', to: 'leads#create_new_from_email'
+  get '/leads/:id/mark_as_accepted', to: 'leads#mark_as_accepted', as: 'accept_through_email'
 
 end
