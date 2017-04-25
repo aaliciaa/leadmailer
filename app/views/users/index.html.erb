@@ -62,15 +62,15 @@
                 <table class="table table-striped" id="TableSort" style="width:100%">
 
                   <tr class="bg-grey light-font" id="table-header-green">
-                    <th class="user-th"> <%= link_to users_path(order: "rank") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Ranking<% end %></th>
+                    <th class="user-th rank-width"> <%= link_to users_path(order: "rank") do %>Rank<i class="fa fa-sort light-font" aria-hidden="true"></i><% end %></th>
 
-                    <th class="user-th"><%= link_to users_path(order: "name") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Salesperson<% end %></th>
+                    <th class="user-th"><%= link_to users_path(order: "name") do %>Salesperson<i class="fa fa-sort light-font" aria-hidden="true"></i><% end %></th>
 
-                    <th class="user-th"><%= link_to users_path(order: "email") do %><i class="fa fa-sort light-font" aria-hidden="true"></i>Email<% end %></th>
+                    <th class="user-th"><%= link_to users_path(order: "email") do %>Email<i class="fa fa-sort light-font" aria-hidden="true"></i><% end %></th>
 
-                    <th class="user-th"><i class="fa fa-sort light-font" aria-hidden="true"></i>Conversion Rate</th>
-                    <th class="user-th"><i class="fa fa-sort light-font" aria-hidden="true"></i>Avg Response Time</th>
-                    <th class="user-th"><i class="fa fa-sort light-font" aria-hidden="true"></i>Availability</th>
+                    <th class="user-th">Conversion Rate</th>
+                    <th class="user-th">Avg Response Time</th>
+                    <th class="user-th avail-width">Availability</th>
                     <th class="user-th">Delete User</th>
                   </tr>
 
