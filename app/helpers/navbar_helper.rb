@@ -1,6 +1,6 @@
 module NavbarHelper
   def greet
-    now = Time.now
+    now = Time.zone.now
     today = Date.today.to_time
 
     morning = today.beginning_of_day
