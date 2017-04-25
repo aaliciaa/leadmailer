@@ -54,6 +54,8 @@
 .table > tbody > tr > th {
   vertical-align: middle;
   padding: 7px 9px;
+  font-size: 11px;
+  text-align: center;
 }
 
 .table > tbody > tr > td {
@@ -126,7 +128,7 @@
 
 // User Buttons
 .add-lead-btn {
-  margin-bottom: 11px;
+  // margin-bottom: 11px;
   background-color: #53b8e9;
   border-color: none;
   font-size: 11px;
@@ -228,4 +230,32 @@
 
 .x-margin {
   margin: 0 20px;
+}
+
+.status-width {
+  width: 79px;
+}
+
+.sales-width {
+  width: 121px;
+}
+
+.options-width {
+  width: 82px;
+}
+
+.source-width {
+  width: 84px;
+}
+
+#grey-column {
+ background-color: grey;
+}
+
+.rank-width {
+ width: 80px;
+}
+
+.avail-width {
+  width: 80px;
 }
