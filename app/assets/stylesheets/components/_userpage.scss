@@ -128,7 +128,13 @@
 
 // User Buttons
 .add-lead-btn {
-  // margin-bottom: 11px;
+  background-color: #53b8e9;
+  border-color: none;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.table-button {
   background-color: #53b8e9;
   border-color: none;
   font-size: 11px;
@@ -260,3 +266,23 @@
   color: #E6E7E8;
   margin-top: 13px;
 }
+
+.next-lead-box {
+  color: #252525;
+  padding: 2px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: center;
+  h3 {
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 300;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  }
+}
+
