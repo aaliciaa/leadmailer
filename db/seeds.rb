@@ -305,5 +305,7 @@ nathan_leads[2..3].each do |lead|
 end
 
 
+Lineup.build(User.all)
+
 
 
