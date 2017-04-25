@@ -1,16 +1,16 @@
-Rails app "Leadmailer" created for the LeWagon Batch#58 final project in Tokyo
+Rails app "Leadmailer" created for the LeWagon Batch#58 final project in Tokyo<br>
 (Presented live at Impact Hub in Meguro on April 28th 2017)
-
+<br><br>
 
 Team members:
 - Alicia Bolton
 - Biz Metzler
 - Chris Hutchinson
+<br><br>
 
-
-[Leadmailer](https://www.leadmailer.pro)
+[Leadmailer](https://www.leadmailer.pro)<br>
 The website we worked on after just 2 months of training.
+<br><br>
 
-
-[Le Wagon coding bootcamp](https://www.lewagon.com).
+[Le Wagon coding bootcamp](https://www.lewagon.com).<br>
 Homepage of our bootcamp.
