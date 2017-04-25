@@ -305,5 +305,20 @@ nathan_leads[2..3].each do |lead|
 end
 
 
-
+christopher = User.create(name: "Chris Hutchinson", email: "leadmailertest@gmail.com", password: "123456", photo: "QT_0063.jpg", rank: nil)
+2.times do
+  lead_name = Faker::Name.name
+  email_name = lead_name.gsub!(/\s/, '.')
+  nathan_lead = Lead.new(
+  name: lead_name,
+  email: "#{email_name}@outlook.com",
+  phone: Faker::PhoneNumber.cell_phone,
+  received_at: Time.now(),
+  status: "pending",
+  user: christopher,
+  source: "Car Kijiji"
+  )
+  christopher_lead.save!
+  christopher_leads << christopher_lead
+end
 
