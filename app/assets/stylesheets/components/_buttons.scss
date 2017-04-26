@@ -15,17 +15,12 @@
 }
 
 .logged-in-dash {
-  padding: 5px 0px 5px 2px;
-  background-color: transparent;
-  color: $brand-primary;
+  padding: 5px 0px 5px 15px;
+  background-color: $brand-primary;
+  color: #ffffff;
   border: 2px solid $brand-primary;
   border-radius: 2px;
   transition: .2s ease;
   text-decoration: none;
-}
-
-.logged-in-dash:hover {
-  background-color: $brand-primary;
-  text-decoration: none;
-  color: #ffffff;
+  width: 100px;
 }
