@@ -14,7 +14,20 @@
   padding: 127px 60px;
 }
 
+.banner-btn {
+  position: absolute;
+  top: 350px;
+  right: 98px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border: none;
+  padding: 10px 20px;
+  border: 2px solid $brand-primary;
+}
 
+.ipad-img {
+  padding-top: 70px;
+}
 // Home Navigation
 
 .navbar-home {
