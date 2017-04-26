@@ -9,7 +9,7 @@
 
 .slider2 {
   height: 26px;
-  width: 90px;
+  width: 100px;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -21,7 +21,7 @@
   transition: .5s;
   border-radius: 2px;
   color: white;
-  padding: 9px 29px;
+  padding: 9px 50px 9px 29px;
   font-size: 7px;
   border-radius: 2px;
   font-weight:normal;
@@ -64,9 +64,9 @@ input:focus + .slider2 {
 }
 
 input:checked + .slider2:before {
-  -webkit-transform: translateX(62px);
-  -ms-transform: translateX(62px);
-  transform: translateX(62px);
+  -webkit-transform: translateX(72px);
+  -ms-transform: translateX(72px);
+  transform: translateX(72px);
 }
 
 /* Rounded sliders */
@@ -79,17 +79,17 @@ input:checked + .slider2:before {
 }
 
 .ontext2 {
+  margin-right: 30px;
   position: absolute;
   left: 10px;
-  top: 6px;
-  margin-right: 50px;
+  top: 5.5px;
   text-align: left;
   font-size: 10px;
 }
 
 .offtext2 {
-  font-size: 10px;
   position: absolute;
-  top: 6px;
-  right: 6px;
+  right: 11px;
+  top: 5.5px;
+  font-size: 10px;
 }

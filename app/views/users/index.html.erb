@@ -91,14 +91,14 @@
                           <%= link_to toggle_availability_user_path(user), method: :patch do %>
                             <label class="switch2">
                               <input type="checkbox" checked>
-                              <div class="slider2"><div class="ontext2">ONLINE</div></div>
+                              <div class="slider2"><div class="ontext2">Available</div></div>
                             </label>
                           <% end %>
                         <% else %>
                           <%= link_to toggle_availability_user_path(user), method: :patch do %>
                             <label class="switch2">
                               <input type="checkbox">
-                              <div class="slider2"><div class="offtext2">OFFLINE</div></div>
+                              <div class="slider2"><div class="offtext2">Off Duty</div></div>
                             </label>
                           <% end %>
                         <% end %>
