@@ -1,25 +1,42 @@
 /* Banner design */
 .banner {
   color: white;
-  height: 100vh;
+  height: 600px;
   position: relative;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
+  // /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  // background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: left;
   // margin-top: 71px;
   h1 {
-    font-size: 35px;
+    font-size: 42px;
     font-weight: 400;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
     line-height: 43px;
     letter-spacing: 2px;
     padding: 15px 60px 15px;
     position: absolute;
-    top: 200px;
+    top: 156px;
     right: 34px;
     text-align: right;
+  }
+  h2 {
+    font-size: 25px;
+    font-weight: 300;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+    line-height: 43px;
+    letter-spacing: 2px;
+    padding: 15px 60px 15px;
+    position: absolute;
+    top: 234px;
+    right: 34px;
+    text-align: right;
+    color: lightgrey;
+  }
+  .banner-img {
+    position: absolute;
+    bottom: 0px;
   }
 }
 
