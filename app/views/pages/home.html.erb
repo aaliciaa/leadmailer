@@ -3,12 +3,18 @@
   <div class="navbar-wagon-left">
     <%= link_to root_path, class: "navbar-home-brand" do %>
       <%= image_tag "logo.png" %>
-    <% end %>
+  <% end %>
 
+  <% if current_user %>
+    <ul class="list-inline">
+      <li><%= link_to "Dashboard", users_path, {class: "logged-in-dash btn-transparent login navbar-links"} %> </li>
+    </ul>
+  <% else %>
     <ul class="list-inline">
       <li><%= link_to "Login", new_user_session_path, {class: "btn-transparent login navbar-links"} %> </li>
       <li><%= link_to "Get started for FREE", new_user_session_path, {class: "btn btn-primary get-started navbar-links"} %> </li>
     </ul>
+  <% end %>
   </div>
 </div>
 
