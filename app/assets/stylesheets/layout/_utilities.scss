@@ -67,6 +67,10 @@ background: linear-gradient(to top, #29323c, #485563); /* W3C, IE 10+/ Edge, Fir
   color: $brand-primary;
 }
 
+.grey-font {
+  color: #A6A6A6;
+}
+
 .border {
   border: solid 0.5px lightgrey;
 }
@@ -81,6 +85,7 @@ h2 {
   font-size: 20px;
   font-weight: 500;
   margin-top: 6px;
+  letter-spacing: 1px;
 }
 
 h3 {

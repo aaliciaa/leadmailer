@@ -15,67 +15,114 @@
   <!-- Banner code -->
 <div class="banner-wrapper">
   <div class="banner bg-gradient banner-gradient" id="banner-gradient">
-
-  <div class="banner-img">
-  <%= image_tag "emailer.png" %>
-  </div>
-  <div class="banner-text">
-    <h1 class="light-font">Emailing leads to your sales team?</h1>
-  <h2>Forward them instantly with LeadMailer</h2>
-  <%= link_to "LEARN MORE", new_user_session_path, {class: "btn btn-primary banner-btn btn-transparent"} %>
+    <div class="banner-img">
+    <%= image_tag "emailer.png" %>
+    </div>
+    <div class="banner-text">
+      <h1 class="light-font">Emailing leads to your sales team?</h1>
+        <h2>Forward them instantly with LeadMailer</h2>
+        <%= link_to "LEARN MORE", new_user_session_path, {class: "btn btn-primary banner-btn btn-transparent"} %>
+    </div>
   </div>
 </div>
 
 <!-- Do you have salesteam...etc -->
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
-      <div class="salesteam-wrapper">
-      <h1 class="pull-left">Do you have leads arriving by email,
-      and a sales team to distribute them to?</h1>
-      <%= image_tag "blueline.png", alt: "blue line", width: "200px" %>
-      <h2>We know speed of contact is critical so we’ve cut out the middle man.</h2><BR>
-      <ul>
-        <li> Leads distributed in round robin manner</li>
-        <li> Lightweight - sits on top of your current CRM</li>
-        <li> ZERO data transfer costs</li>
-      </ul>
-      <%= link_to "GET STARTED", new_user_session_path, {class: "btn btn-primary pull-right btn-transparent"} %>
+    <div class="col-md-12">
+      <div class="home-wrapper text-center">
+        <h1>Do you have leads arriving by email, and a sales team to distribute them to?</h1>
+          <h2>We know speed of contact is critical so we’ve cut out the middle man</h2>
+              <%= image_tag "blueline.png", alt: "blue line", width: "200px" %>
       </div>
-    </div>
-    <div class="col-md-6">
-      <%= image_tag "ipad.png", alt: "salesman", width: "500px", class: "ipad-img" %>
-    </div>
     </div>
   </div>
 </div>
 
-<!-- Let us assist you in 3 simple steps -->
-
-<div class="salesteam-wrapper bg-gradient">
-<h1 class="light-font text-center">3 Simple Steps to increase your marketing income</h1>
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-4">
-      <div class="text-center">
-        <h1 class="light-font home-number">1</h1>
-        <h2 class="light-font">Route</h2>
-        <p class="light-font">Add your sales team via their email address, and they will be added to the lead rotation.</p>
+    <div class="col-md-7">
+      <div class="salesteam-wrapper">
+        <h2 class="blue-font">Deliver and contact leads faster </h2>
+        Send leads to a centralised inbox and we'll forward them to your salesteam in round robin manner
+        <BR><BR>
+        <BR>
+          <h2 class="blue-font">Don't spend thousands on a complicated CRM</h2>
+        <ul>
+          <li>No integration - sits beside your current CRM / database</li>
+          <li>ZERO data transfer costs</li>
+          <li>Simple set up - no download required</li>
+        </ul>
+        <BR>
+          <h2 class="blue-font">Do less, know more</h2>
+        <ul>
+          <li>Analytics to empower your marketing team and effectively channel your marketing spend</li>
+          <li>Dedicated salesperson dashboard to mark the lead result and measure performance</li>
+        </ul>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="text-center">
-        <h1 class="light-font home-number">2</h1>
-         <h2 class="light-font">Record</h2>
-        <p class="light-font">Any new leads are emailed directly to the salesperson, and added to the manager and salesperson dashboard</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="text-center">
-        <h1 class="light-font home-number">3</h1>
-        <h2 class="light-font">Report</h2>
-        <p class="light-font">Do less, know more with simple analytics for time poor business owners.
-</p>
-      </div>
-    </div>
+    <div class="col-md-5 no-gutter">
+      <%= image_tag "imac.png", alt: "imac", width: "100%", class: "ipad-img" %>
     </div>
   </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+      <%= link_to "Get started for FREE", new_user_session_path, {class: "btn btn-primary btn-large"} %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Testimonials -->
+<div class="bg-grey">
+<h1 class="light-font text-center cta-banner">How can LeadMailer assist your team?</h1>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="salesteam-wrapper">
+      <h1>Salesperson</h1>
+      <ul>
+        <li>Receive the lead in your inbox as soon as the form is submitted</li>
+        <li>Act on leads faster, close more deals</li>
+        <li>Manage your availability</li>
+        <li>Measure your performance</li>
+        <li>Simple 1 page interface - access from your inbox</li>
+      </ul>
+      <p class="btn btn-primary btn-sml pull-right"><i class="fa fa-share white-font" aria-hidden="true"></i> Forward to my Boss</p>
+      </div>
+    </div>
+    <div class="col-md-6 no-gutter">
+      <%= image_tag "phone-man.jpg", width: "100%", alt: "salesman" %>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 no-gutter">
+      <%= image_tag "marketing.png", width: "100%", alt: "marketing" %>
+    </div>
+      <div class="col-md-6">
+        <div class="salesteam-wrapper">
+      <h1>Marketing Teams</h1>
+      <ul>
+        <li>No more manual lead forwarding</li>
+        <li>No need to input leads to a spreadsheet</li>
+        <li>See the outcome of every lead generated</li>
+        <li>Toggle salesperson availability</li>
+        <li>View statistics to better channel your spend</li>
+        <li>Measure salesteam performance and response time</li>
+        <li>See which campaigns are producing the most leads</li>
+      </ul>
+      <p class="btn btn-primary btn-sml pull-right"><i class="fa fa-lightbulb-o light-font" aria-hidden="true"></i> Tell me more</p>
+      </div>
+    </div>
+  </div>
+</div>
