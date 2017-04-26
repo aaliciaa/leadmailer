@@ -84,7 +84,7 @@
                       <td class="user-td"><%= link_to user.name, user_path(user) %></td>
                       <td class="user-td"><%= user.email %></td>
                       <td class="user-td" id="rank-align"><%= conversion_rate_for(user) %> %</td>
-                      <td class="user-td" id="rank-align"><%= user.leads.average(:response_time) ? user.leads.average(:response_time).round : "n/a" %> mins</td>
+                      <td class="user-td" id="rank-align"><%= user.leads.average(:response_time) ? (user.leads.average(:response_time) / 60).round : "n/a" %> mins</td>
                       <td class="user-td">
 
                         <% if user.available %>
