@@ -7,6 +7,7 @@ class CreateLeads < ActiveRecord::Migration[5.0]
       t.datetime :accepted_at
       t.string :status
       t.string :source
+      t.string :phone
       t.float :response_time
       t.references :user
 

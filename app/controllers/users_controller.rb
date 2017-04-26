@@ -1,3 +1,5 @@
+# require '../services/update_lineup.rb'
+
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :toggle_availability]
 
@@ -42,7 +44,6 @@ class UsersController < ApplicationController
     @leads = Lead.all
   end
 
-
   def destroy
     @user.destroy
     redirect_to :back
@@ -59,28 +60,15 @@ class UsersController < ApplicationController
   end
 
 
-  # lineup methods
+private
 
   def add_to_lineup(user)
-    # user becomes available OR add new user
-    bumped_lineup = Lineup.first.lineup
-    bumped_lineup << user
-    Lineup.destroy_all
-    Lineup.create(:lineup => bumped_lineup)
+    AdjustLineupService.new(user).add
   end
 
   def remove_from_lineup(user)
-    # user becomes UN-available OR user is deleted
-    bumped_index = Lineup.first.lineup.find_index(user)
-    bumped_lineup = Lineup.first.lineup
-    bumped_lineup.delete_at(bumped_index)
-    Lineup.destroy_all
-    Lineup.create(:lineup => bumped_lineup)
+    AdjustLineupService.new(user).remove
   end
-
-
-
-private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :manager, :rank, :photo, :available)

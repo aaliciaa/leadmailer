@@ -1,5 +1,6 @@
 class LeadsController < ApplicationController
   before_action :set_lead, only: [:edit, :update, :destroy, :mark_as_settled, :mark_as_lost, :mark_as_accepted]
+  # rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
     if params[:order]
@@ -27,7 +28,7 @@ class LeadsController < ApplicationController
     @lead.status = "pending"
     @lead.source = @lead.source.strip
     if @lead.save
-      UserMailer.newlead(@lead.user).deliver_now
+      UserMailer.newlead(@lead).deliver_now
       store_user_rankings(@users)
       redirect_to leads_path
     else
@@ -38,6 +39,7 @@ class LeadsController < ApplicationController
 
   def edit
   end
+
 
   def update
     @users = User.all
@@ -70,7 +72,12 @@ class LeadsController < ApplicationController
     @lead.save
     @users = User.all
     store_user_rankings(@users)
-    redirect_to :back
+    UserMailer.forward(@lead).deliver_now
+    if request.referer.nil?
+      redirect_to user_path(@lead.user)
+    else
+      redirect_to :back
+    end
   end
 
   def mark_as_settled
@@ -88,14 +95,6 @@ class LeadsController < ApplicationController
     store_user_rankings(@users)
     redirect_to :back
   end
-
-
-  # Edit Lineup
-
-
-
-
-
 
   # Simulate Incoming Email:
 
@@ -123,8 +122,6 @@ class LeadsController < ApplicationController
       assignment
     end
   end
-
-
 
 
 
