@@ -10,11 +10,12 @@
   justify-content: left;
   // margin-top: 71px;
   h1 {
+    font-family: $header-font;
     font-size: 42px;
     font-weight: 400;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
     line-height: 43px;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     padding: 15px 60px 15px;
     position: absolute;
     top: 156px;
@@ -22,12 +23,13 @@
     text-align: right;
   }
   h2 {
+    font-family: $base-font;
     font-size: 25px;
     font-weight: 300;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
     line-height: 43px;
-    letter-spacing: 2px;
-    padding: 15px 60px 15px;
+    letter-spacing: 3px;
+    padding: 0px 60px 15px;
     position: absolute;
     top: 234px;
     right: 34px;

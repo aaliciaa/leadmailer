@@ -11,7 +11,21 @@
 }
 
 .salesteam-wrapper {
-  padding: 127px 60px;
+  padding: 44px 59px 0px;
+  li {
+    line-height: 33px;
+  }
+}
+
+.btn-large {
+  margin-bottom: 48px;
+  padding: 16px 37px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.home-wrapper {
+  padding: 45px 36px 0px;
 }
 
 .banner-btn {
@@ -24,6 +38,30 @@
   padding: 10px 20px;
   border: 2px solid $brand-primary;
 }
+
+.no-gutter {
+  padding: 0px;
+}
+
+.cta-banner {
+  height: 119px;
+  letter-spacing: 4px;
+  font-weight: 300;
+  padding: 44px;
+  margin: 0px;
+}
+
+.cta-h2 {
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  font-size: 18px;
+  font-weight: 300;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+  line-height: 43px;
+  letter-spacing: 3px;
+  padding: 15px 60px 15px;
+  text-align: right;
+  color: lightgrey;
+  }
 
 .ipad-img {
   padding-top: 70px;
@@ -72,6 +110,18 @@
       }
     }
   }
+}
+
+.small-cta {
+  font-size: 14px;
+  padding-top: 15px;
+  color: $brand-primary;
+}
+
+.btn-sml {
+  font-size: 12px;
+  margin-top: 15px;
+  margin-right: 45px;
 }
 
 // /* Navbar right section (with form, links, button) */
