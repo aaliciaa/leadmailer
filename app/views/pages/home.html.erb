@@ -28,7 +28,7 @@
     <div class="banner-text">
       <h1 class="light-font">Emailing leads to your sales team?</h1>
         <h2>Forward them instantly with LeadMailer</h2>
-        <%= link_to "LEARN MORE", new_user_session_path, {class: "btn btn-primary banner-btn btn-transparent"} %>
+        <%= link_to "LEARN MORE", "#", {id: "learn-more", class: "btn btn-primary banner-btn btn-transparent"} %>
     </div>
   </div>
 </div>
@@ -38,9 +38,11 @@
   <div class="row">
     <div class="col-md-12">
       <div class="home-wrapper text-center">
-        <h1>Do you have leads arriving by email, and a sales team to distribute them to?</h1>
-          <h2>We know speed of contact is critical so we’ve cut out the middle man</h2>
+        <div id="scroll-first">
+          <h1>Do you have leads arriving by email, and a sales team to distribute them to?</h1>
+            <h2>We know speed of contact is critical so we’ve cut out the middle man</h2>
               <%= image_tag "blueline.png", alt: "blue line", width: "200px" %>
+        </div>
       </div>
     </div>
   </div>
