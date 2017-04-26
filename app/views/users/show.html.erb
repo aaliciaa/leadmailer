@@ -66,7 +66,7 @@
           <td class="user-td"><%= link_to "Accept", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary table-button" %></td>
           <td class="user-td">000<%= lead.id %></td>
           <td class="user-td"><%= lead.status.capitalize %></td>
-          <td class="user-td"><%= lead.created_at.strftime("%d/%m/%y at %I:%M%p") %> (<%= time_ago_in_words(User.first.leads.first.created_at) %> ago)</td>
+          <td class="user-td"><%= lead.created_at.strftime("%d/%m/%y at %I:%M%p") %> (<%= time_ago_in_words(lead.created_at) %> ago)</td>
         </tr>
         <% end %>
         </table>
