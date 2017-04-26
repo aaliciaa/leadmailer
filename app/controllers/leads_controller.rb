@@ -3,10 +3,13 @@ class LeadsController < ApplicationController
   # rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
-    if params[:order]
-      @leads = Lead.order(params[:order].to_sym)
+    order_by = params[:order]
+
+    if order_by
+      order_by = "users.name" if order_by == "salesperson"
+      @leads = Lead.includes(:user).order(order_by)
     else
-      @leads = Lead.order(received_at: :desc)
+      @leads = Lead.includes(:user).order(received_at: :desc)
     end
     @users = User.all
 

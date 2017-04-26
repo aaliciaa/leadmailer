@@ -61,7 +61,7 @@
 
             <th class="user-th status-width"><%= link_to leads_path(order: "status") do %>Status<i class="fa fa-sort light-font" aria-hidden="true"></i><% end %></th>
 
-            <th class="user-th sales-width">Salesperson<i class="fa fa-sort light-font" aria-hidden="true"></i></th>
+            <th class="user-th sales-width"><%= link_to leads_path(order: "salesperson") do %>Salesperson<i class="fa fa-sort light-font" aria-hidden="true"></i><% end %></th>
 
             <th class="user-th"><%= link_to leads_path(order: "name") do %>Lead Name<i class="fa fa-sort light-font" aria-hidden="true"></i><% end %></th>
 
