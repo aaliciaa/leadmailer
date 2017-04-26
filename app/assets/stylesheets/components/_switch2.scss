@@ -9,7 +9,7 @@
 
 .slider2 {
   height: 26px;
-  width: 100px;
+  width: 88px;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -64,9 +64,9 @@ input:focus + .slider2 {
 }
 
 input:checked + .slider2:before {
-  -webkit-transform: translateX(72px);
-  -ms-transform: translateX(72px);
-  transform: translateX(72px);
+  -webkit-transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  transform: translateX(60px);
 }
 
 /* Rounded sliders */
@@ -81,15 +81,15 @@ input:checked + .slider2:before {
 .ontext2 {
   margin-right: 30px;
   position: absolute;
-  left: 10px;
-  top: 5.5px;
+  left: 6px;
+  top: 7px;
   text-align: left;
-  font-size: 10px;
+  font-size: 9px;
 }
 
 .offtext2 {
   position: absolute;
-  right: 11px;
-  top: 5.5px;
-  font-size: 10px;
+  right: 7px;
+  top: 7px;
+  font-size: 9px;
 }
