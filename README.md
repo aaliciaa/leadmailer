@@ -3,9 +3,9 @@ Rails app "Leadmailer" created for the LeWagon Batch#58 final project in Tokyo<b
 <br><br>
 
 Team members:
-- Alicia Bolton
-- Biz Metzler
-- Chris Hutchinson
+- [Alicia Bolton](https://github.com/aaliciaa)
+- [Biz Metzler](https://github.com/beametzler)
+- [Chris Hutchinson](https://github.com/kuwantum)
 <br><br>
 
 [Leadmailer](http://www.leadmailer.pro)<br>
