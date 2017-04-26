@@ -13,3 +13,14 @@
   text-decoration: none;
   color: #ffffff;
 }
+
+.logged-in-dash {
+  padding: 5px 0px 5px 15px;
+  background-color: $brand-primary;
+  color: #ffffff;
+  border: 2px solid $brand-primary;
+  border-radius: 2px;
+  transition: .2s ease;
+  text-decoration: none;
+  width: 100px;
+}
