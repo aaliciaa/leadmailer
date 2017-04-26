@@ -1,3 +1,4 @@
+<!-- LEADS INDEX PAGE -->
 <div class="main-wrapper bg-light-grey">
   <div class="sidebar">
     <div class="stats-wrapper">
@@ -21,7 +22,7 @@
         <!-- INSERT AVATAR HERE -->
         <% top_name = calculate_ranking(@users).first[:name] %>
         <% top_user = User.where(name: top_name) %>
-        <%= image_tag top_user.first.photo, class: "center-block avatar" %>
+        <%= image_tag top_user.first.photo, class: "center-block avatar-medium" %>
       </div>
     </div>
 
