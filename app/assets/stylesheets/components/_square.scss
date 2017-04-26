@@ -1,3 +1,4 @@
+
 .spinner {
   margin: 5px;
   width: 50px;
@@ -51,3 +52,61 @@
     -webkit-transform: scaleY(1.0);
   }
 }
+
+
+// Below is for testing
+
+$ninety : 90deg;
+
+.square{
+  width: 4px;
+  height: 10px;
+  background: $blue;
+  border-radius: 60px;
+  display:block;
+  margin:10px;
+  -webkit-animation:turn 2.5s ease infinite;
+  animation:turn 2.5s ease infinite;
+}
+
+.spinner {
+  width: 50px;
+}
+.top{
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  -webkit-transform:rotate($ninety);
+  transform:rotate($ninety);
+}
+.bottom{
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  -webkit-transform:rotate(-$ninety);
+  transform:rotate(-$ninety);
+}
+.left{
+  position: absolute;
+  left: 40%;
+  top: 50%;
+}
+.right{
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  -webkit-transform:rotate(-$ninety*2);
+  transform:rotate(-$ninety*2);
+}
+@-webkit-keyframes turn{
+  0%{transform:translateX(0) translateY(0) rotate(0);}
+  50%{transform: translateX(400%) translateY(100%) rotate($ninety);}
+  100%{transform: translateX(0) translateY(0) rotate(0);}
+}
+@keyframes turn{
+  0%{transform:translateX(0) translateY(0) rotate(0);}
+  70%{transform: translateX(400%) translateY(100%) rotate($ninety);}
+  100%{transform: translateX(0) translateY(0) rotate(0);}
+}
+
+
