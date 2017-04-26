@@ -13,6 +13,8 @@ require 'faker'
 User.destroy_all
 Lead.destroy_all
 
+html = "This lead wasn't generated from an email."
+
 # 1 user, 8 leads:
 alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", password: "123456", photo: "QT_0063.jpg", rank: nil)
 
@@ -27,6 +29,7 @@ alicia_leads = []
     received_at: Time.now(),
     status: "pending",
     user: alicia,
+    html: html,
     source: ["Car Kijiji", "Truck Sales", "Alibaba"].sample,
     )
   lead.save!
@@ -67,6 +70,7 @@ nicole = User.create(name: "Nicole Smith", email: "nicole.smith@hotmail.com", pa
   received_at: Time.now(),
   status: "pending",
   user: nicole,
+  html: html,
   source: "Heavy Equip Inc"
   )
   nicole_lead.save!
@@ -84,6 +88,7 @@ mike_leads = []
   phone: Faker::PhoneNumber.cell_phone,
   received_at: Time.now(),
   status: "pending",
+  html: html,
   user: mike,
   source: "Heavy Equip Inc"
   )
@@ -123,6 +128,7 @@ christie_leads = []
   phone: Faker::PhoneNumber.cell_phone,
   received_at: Time.now(),
   status: "pending",
+  html: html,
   user: christie,
   source: "Heavy Equip Inc"
   )
@@ -162,6 +168,7 @@ john_leads = []
   phone: Faker::PhoneNumber.cell_phone,
   received_at: Time.now(),
   status: "pending",
+  html: html,
   user: john,
   source: "Heavy Equip Inc"
   )
@@ -201,6 +208,7 @@ jim_leads = []
   phone: Faker::PhoneNumber.cell_phone,
   received_at: Time.now(),
   status: "pending",
+  html: html,
   user: jim,
   source: "Heavy Equip Inc"
   )
@@ -242,6 +250,7 @@ chris_leads = []
   phone: Faker::PhoneNumber.cell_phone,
   received_at: Time.now(),
   status: "pending",
+  html: html,
   user: chris,
   source: "Heavy Equip Inc"
   )
@@ -280,6 +289,7 @@ nathan_leads = []
   phone: Faker::PhoneNumber.cell_phone,
   received_at: Time.now(),
   status: "pending",
+  html: html,
   user: nathan,
   source: "Heavy Equip Inc"
   )
@@ -315,6 +325,7 @@ christopher = User.create(name: "Chris Hutchinson", email: "leadmailertest@gmail
   phone: Faker::PhoneNumber.cell_phone,
   received_at: Time.now(),
   status: "pending",
+  html: html,
   user: christopher,
   source: "Car Kijiji"
   )

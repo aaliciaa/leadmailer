@@ -26,6 +26,7 @@ class LeadsController < ApplicationController
     @lead = Lead.new(lead_params)
     @lead.received_at = DateTime.now()
     @lead.status = "pending"
+    @lead.html = "This lead wasn't generated from an email."
     @lead.source = @lead.source.strip
     if @lead.save
       UserMailer.newlead(@lead).deliver_now
