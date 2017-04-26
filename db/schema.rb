@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 20170425075642) do
     t.datetime "accepted_at"
     t.string   "status"
     t.string   "source"
-    t.string   "phone"
     t.float    "response_time"
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "phone"
     t.text     "html"
     t.index ["user_id"], name: "index_leads_on_user_id", using: :btree
   end
