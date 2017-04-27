@@ -83,13 +83,13 @@
     <div class="scroll-me2">
       <table class="user-table table table-striped" style="width:100%">
       <tr class="table-header bg-grey light-font" id="table-header-grey">
-        <th class="user-th">Lead ID:</th>
+        <th class="user-th lead-th">Lead ID:</th>
         <th class="user-th">Name:</th>
         <th class="user-th">Email:</th>
-        <th class="user-th">Phone:</th>
-        <th class="user-th">Source:</th>
+        <th class="user-th phone-th">Phone:</th>
+        <th class="user-th source-th">Source:</th>
         <th class="user-th">Generated:</th>
-        <th class="user-th">Outcome:</th>
+        <th class="user-th outcome-th">Outcome:</th>
       </tr>
       <% if @ongoing_leads.any? %>
       <% @ongoing_leads.each do |lead| %>
@@ -125,12 +125,12 @@
     <div class="scroll-me2">
       <table class="user-table table table-striped" style="width:100%">
         <tr class="table-header bg-grey light-font" id="table-header-grey">
-          <th class="user-th">Name:</th>
-          <th class="user-th">Email:</th>
-          <th class="user-th">Phone:</th>
-          <th class="user-th">Source:</th>
+          <th class="user-th name-th">Name:</th>
+          <th class="user-th email-th">Email:</th>
+          <th class="user-th phone-th">Phone:</th>
+          <th class="user-th source-th">Source:</th>
           <th class="user-th">Generated:</th>
-          <th class="user-th">Result:</th>
+          <th class="user-th result-th">Result:</th>
         </tr>
         <% if @completed_leads.any? %>
           <% @completed_leads.each do |lead| %>
