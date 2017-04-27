@@ -315,7 +315,7 @@ nathan_leads[2..3].each do |lead|
 end
 
 
-christopher = User.create(name: "Chris Hutchinson", email: "leadmailertest@gmail.com", password: "123456", photo: "chris.jpg", rank: nil)
+christopher = User.create(name: "Chris Hutchinson", email: "leadmailertest@gmail.com", password: "123456", photo: "chrissuit.jpg", rank: nil)
 2.times do
   lead_name = Faker::Name.name
   email_name = lead_name.gsub!(/\s/, '.')
