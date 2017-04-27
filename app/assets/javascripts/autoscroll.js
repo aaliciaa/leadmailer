@@ -13,7 +13,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('#testiomonials').on('click',function (e){
+  $('#testimonials').on('click',function (e){
     e.preventDefault();
     target = $("#scroll-second");
     $('html, body').stop().animate(
