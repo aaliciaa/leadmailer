@@ -10,9 +10,9 @@ class WebhooksController < ApplicationController
     # lead_source = params[:From]
     lead_html = params[:HtmlBody]
     page = Nokogiri::HTML(lead_html)
-    lead_name = page.css('font#name')[0].text
-    lead_email = page.css('font#email')[0].text
-    lead_phone = page.css('font#phone')[0].text
+    lead_name = page.css('.lm-name')[0].text
+    lead_email = page.css('.lm-email')[0].text
+    lead_phone = page.css('.lm-phone')[0].text
     lead_source = ["Car Kijiji", "Truck Sales"].sample
     create_lead_from_email(
       name: lead_name,
