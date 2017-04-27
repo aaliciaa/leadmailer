@@ -21,10 +21,10 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
 alicia_leads = []
 8.times do
   lead_name = Faker::Name.first_name
-  email_name = lead_name.gsub!(/\s/, '.')
+  # email_name = lead_name.gsub!(/\s/, '.')
   lead = Lead.new(
     name: lead_name,
-    email: "#{email_name}@outlook.com",
+    email: "#{lead_name}@outlook.com",
     phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
     received_at: Time.now(),
     status: "pending",
@@ -62,10 +62,10 @@ taryn = User.create(name: "Taryn Baron", email: "taryn.baron@hotmail.com", passw
 nicole = User.create(name: "Nicole Smith", email: "nicole.smith@hotmail.com", password: "123456", photo: "QS_0067.jpg", rank: nil)
 5.times do
   lead_name = Faker::Name.first_name
-  email_name = lead_name.gsub!(/\s/, '.')
+  # email_name = lead_name.gsub!(/\s/, '.')
   nicole_lead = Lead.new(
   name: lead_name,
-  email: "#{email_name}@outlook.com",
+  email: "#{lead_name}@outlook.com",
   phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
@@ -81,10 +81,10 @@ mike = User.create(name: "Mike Morneau", email: "mike.morneau@hotmail.com", pass
 mike_leads = []
 8.times do
   lead_name = Faker::Name.first_name
-  email_name = lead_name.gsub!(/\s/, '.')
+  # email_name = lead_name.gsub!(/\s/, '.')
   mike_lead = Lead.new(
   name: lead_name,
-  email: "#{email_name}@outlook.com",
+  email: "#{lead_name}@outlook.com",
   phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
@@ -121,10 +121,10 @@ christie = User.create(name: "Christie Clark", email: "christie.clark@hotmail.co
 christie_leads = []
 8.times do
   lead_name = Faker::Name.first_name
-  email_name = lead_name.gsub!(/\s/, '.')
+  # email_name = lead_name.gsub!(/\s/, '.')
   christie_lead = Lead.new(
   name: lead_name,
-  email: "#{email_name}@outlook.com",
+  email: "#{lead_name}@outlook.com",
   phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
@@ -161,10 +161,10 @@ john = User.create(name: "John Jones", email: "john.jones@hotmail.com", password
 john_leads = []
 8.times do
   lead_name = Faker::Name.first_name
-  email_name = lead_name.gsub!(/\s/, '.')
+  # email_name = lead_name.gsub!(/\s/, '.')
   john_lead = Lead.new(
   name: lead_name,
-  email: "#{email_name}@outlook.com",
+  email: "#{lead_name}@outlook.com",
   phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
@@ -201,10 +201,10 @@ jim = User.create(name: "Jim Krats", email: "jim.krats@hotmail.com", password: "
 jim_leads = []
 8.times do
   lead_name = Faker::Name.first_name
-  email_name = lead_name.gsub!(/\s/, '.')
+  # email_name = lead_name.gsub!(/\s/, '.')
   jim_lead = Lead.new(
   name: lead_name,
-  email: "#{email_name}@outlook.com",
+  email: "#{lead_name}@outlook.com",
   phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
@@ -243,10 +243,9 @@ chris = User.create(name: "Chris Columb", email: "chris.columb@hotmail.com", pas
 chris_leads = []
 8.times do
   lead_name = Faker::Name.first_name
-  email_name = lead_name.gsub!(/\s/, '.')
   chris_lead = Lead.new(
   name: lead_name,
-  email: "#{email_name}@outlook.com",
+  email: "#{lead_name}@outlook.com",
   phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
@@ -282,10 +281,10 @@ nathan = User.create(name: "Nathan Bates", email: "nathan.bates@hotmail.com", pa
 nathan_leads = []
 8.times do
   lead_name = Faker::Name.first_name
-  email_name = lead_name.gsub!(/\s/, '.')
+  # email_name = lead_name.gsub!(/\s/, '.')
   nathan_lead = Lead.new(
   name: lead_name,
-  email: "#{email_name}@outlook.com",
+  email: "#{lead_name}@outlook.com",
   phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
@@ -318,10 +317,10 @@ end
 christopher = User.create(name: "Chris Hutchinson", email: "leadmailertest@gmail.com", password: "123456", photo: "chrissuit.jpg", rank: nil)
 2.times do
   lead_name = Faker::Name.first_name
-  email_name = lead_name.gsub!(/\s/, '.')
+  # email_name = lead_name.gsub!(/\s/, '.')
   christopher_lead = Lead.new(
   name: lead_name,
-  email: "#{email_name}@outlook.com",
+  email: "#{lead_name}@outlook.com",
   phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
