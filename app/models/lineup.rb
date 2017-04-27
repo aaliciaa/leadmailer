@@ -3,7 +3,7 @@ class Lineup < ApplicationRecord
 
 
   def Lineup.build(users)
-    if Lineup.count < 1 || Lineup.first.lineup == nil
+    # if Lineup.count < 1 || Lineup.first.lineup == nil
       lineup = []
       lineup = users.select do |user|
         user.available
