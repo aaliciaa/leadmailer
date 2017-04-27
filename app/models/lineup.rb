@@ -10,8 +10,7 @@ class Lineup < ApplicationRecord
         user.available
       end
       Lineup.create(:lineup => lineup)
-    end
-    Lineup.first.lineup
+      Lineup.first.lineup
   end
 
 
