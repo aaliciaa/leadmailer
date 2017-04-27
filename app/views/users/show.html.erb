@@ -73,6 +73,7 @@
       </div><BR><BR>
 
  <!-- WIP LEADS TABLE -->
+
     <h2> Work In Progress: </h2>
     <div class="scroll-me2">
       <table class="user-table table table-striped" style="width:100%">
@@ -85,6 +86,7 @@
         <th class="user-th">Generated:</th>
         <th class="user-th">Outcome:</th>
       </tr>
+      <% if @ongoing_leads.any? %>
       <% @ongoing_leads.each do |lead| %>
       <tr class="user-tr">
         <td class="user-td">000<%= lead.id %></td>
@@ -94,43 +96,53 @@
         <td class="user-td"><%= lead.source %></td>
         <td class="user-td"><%= lead.created_at.strftime("%d/%m/%y at %I:%M%p") %></td>
         <td class="user-td">
-            <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle table-button" type="button" data-toggle="dropdown">Options
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
-                <li><%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
-              </ul>
-            </div>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle table-button" type="button" data-toggle="dropdown">Options
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Settle Lead", mark_as_settled_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
+              <li><%= link_to "Mark as Lost", mark_as_lost_lead_path(lead), method: :patch, class: "table-dropdown" %></li>
+            </ul>
+          </div>
         </td>
       </tr>
       <% end %>
       </table>
+      <% else %>
+        </table>
+        <div class="no-details">No ongoing leads to display</div>
+      <% end %>
     </div>
 
     <!-- PREVIOUS LEADS TABLE -->
     <h2> Previous Leads: </h2>
+    <!-- Insert conditional for empty table check here -->
     <div class="scroll-me2">
       <table class="user-table table table-striped" style="width:100%">
-      <tr class="table-header bg-grey light-font" id="table-header-grey">
-        <th class="user-th">Name:</th>
-        <th class="user-th">Email:</th>
-        <th class="user-th">Phone:</th>
-        <th class="user-th">Source:</th>
-        <th class="user-th">Generated:</th>
-        <th class="user-th">Result:</th>
-      </tr>
-      <% @completed_leads.each do |lead| %>
-      <tr class="user-tr">
-        <td class="user-td"><%= lead.name %></td>
-        <td class="user-td"><%= lead.email %></td>
-        <td class="user-td"><%= lead.phone %></td>
-        <td class="user-td"><%= lead.source %></td>
-        <td class="user-td"><%= lead.created_at.strftime("%d/%m/%y at %I:%M%p") %></td>
-        <td class="user-td"><%= lead.status.capitalize %></td>
-      </tr>
-      <% end %>
-      </table>
+        <tr class="table-header bg-grey light-font" id="table-header-grey">
+          <th class="user-th">Name:</th>
+          <th class="user-th">Email:</th>
+          <th class="user-th">Phone:</th>
+          <th class="user-th">Source:</th>
+          <th class="user-th">Generated:</th>
+          <th class="user-th">Result:</th>
+        </tr>
+        <% if @completed_leads.any? %>
+          <% @completed_leads.each do |lead| %>
+            <tr class="user-tr">
+              <td class="user-td"><%= lead.name %></td>
+              <td class="user-td"><%= lead.email %></td>
+              <td class="user-td"><%= lead.phone %></td>
+              <td class="user-td"><%= lead.source %></td>
+              <td class="user-td"><%= lead.created_at.strftime("%d/%m/%y at %I:%M%p") %></td>
+              <td class="user-td"><%= lead.status.capitalize %></td>
+            </tr>
+          <% end %>
+        </table>
+        <% else %>
+          </table>
+          <div class="no-details">No lead history to display</div>
+        <% end %>
     </div>
   </div>
 </div>
