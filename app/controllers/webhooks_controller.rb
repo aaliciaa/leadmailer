@@ -11,7 +11,10 @@ class WebhooksController < ApplicationController
     lead_html = params[:HtmlBody]
     puts lead_html
 
-    # page = Nokogiri::HTML(lead_html)
+    page = Nokogiri::HTML(lead_html)
+    puts page
+    lead_name = page.css('.lm-name')
+    puts lead_name
     # lead_name = page.css('.lm-name')[0].text
     # lead_email = page.css('.lm-email')[0].text
     # lead_phone = page.css('.lm-phone')[0].text
