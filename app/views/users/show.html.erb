@@ -61,6 +61,7 @@
           <th class="user-th">Status:</th>
           <th class="user-th">Received:</th>
         </tr>
+        <% if @pending_leads.any? %>
         <% @pending_leads.each do |lead| %>
         <tr class="user-tr">
           <td class="user-td"><%= link_to "Accept", mark_as_accepted_lead_path(lead), method: :patch, class: "btn btn-primary table-button" %></td>
@@ -70,6 +71,10 @@
         </tr>
         <% end %>
         </table>
+        <% else %>
+          </table>
+          <div class="no-pending-details">No pending leads to display</div>
+        <% end %>
       </div><BR><BR>
 
  <!-- WIP LEADS TABLE -->
