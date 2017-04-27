@@ -4,6 +4,7 @@ class Lineup < ApplicationRecord
 
   def Lineup.build(users)
     # if Lineup.count < 1 || Lineup.first.lineup == nil
+      Lineup.destroy_all
       lineup = []
       lineup = users.select do |user|
         user.available
