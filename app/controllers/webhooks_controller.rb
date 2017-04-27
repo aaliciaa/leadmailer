@@ -4,11 +4,16 @@ class WebhooksController < ApplicationController
 
   def postmark
     puts "you made it to the webhook"
-    lead_name = params[:FromName]
-    lead_email = params[:From]
-    lead_phone = params[:From]
-    lead_source = params[:From]
+    # lead_name = params[:FromName]
+    # lead_email = params[:From]
+    # lead_phone = params[:From]
+    # lead_source = params[:From]
     lead_html = params[:HtmlBody]
+    page = Nokogiri::HTML(lead_html)
+    lead_name = page.css('font#name')[0].text
+    lead_email = page.css('font#email')[0].text
+    lead_phone = page.css('font#phone')[0].text
+    lead_source = ["Car Kijiji", "Truck Sales"].sample
     create_lead_from_email(
       name: lead_name,
       email: lead_email,
