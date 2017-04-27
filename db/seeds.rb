@@ -20,17 +20,17 @@ alicia = User.create(name: "Alicia Bolton", email: "alicia.bolton@hotmail.com", 
 
 alicia_leads = []
 8.times do
-  lead_name = Faker::Name.name
+  lead_name = Faker::Name.first_name
   email_name = lead_name.gsub!(/\s/, '.')
   lead = Lead.new(
     name: lead_name,
     email: "#{email_name}@outlook.com",
-    phone: Faker::PhoneNumber.cell_phone,
+    phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
     received_at: Time.now(),
     status: "pending",
     user: alicia,
     html: html,
-    source: ["Car Kijiji", "Truck Sales", "Alibaba"].sample,
+    source: ["Car Kijiji", "Car Sales", "Carbaba"].sample,
     )
   lead.save!
   alicia_leads << lead
@@ -61,17 +61,17 @@ taryn = User.create(name: "Taryn Baron", email: "taryn.baron@hotmail.com", passw
 # user with accepted leads but no closures
 nicole = User.create(name: "Nicole Smith", email: "nicole.smith@hotmail.com", password: "123456", photo: "QS_0067.jpg", rank: nil)
 5.times do
-  lead_name = Faker::Name.name
+  lead_name = Faker::Name.first_name
   email_name = lead_name.gsub!(/\s/, '.')
   nicole_lead = Lead.new(
   name: lead_name,
   email: "#{email_name}@outlook.com",
-  phone: Faker::PhoneNumber.cell_phone,
+  phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
   user: nicole,
   html: html,
-  source: "Heavy Equip Inc"
+  source: "Car Kijiji"
   )
   nicole_lead.save!
 end
@@ -80,17 +80,17 @@ end
 mike = User.create(name: "Mike Morneau", email: "mike.morneau@hotmail.com", password: "123456", photo: "QS_0082.jpg", rank: nil)
 mike_leads = []
 8.times do
-  lead_name = Faker::Name.name
+  lead_name = Faker::Name.first_name
   email_name = lead_name.gsub!(/\s/, '.')
   mike_lead = Lead.new(
   name: lead_name,
   email: "#{email_name}@outlook.com",
-  phone: Faker::PhoneNumber.cell_phone,
+  phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
   html: html,
   user: mike,
-  source: "Heavy Equip Inc"
+  source: "Car Sales"
   )
   mike_lead.save!
   mike_leads << mike_lead
@@ -120,17 +120,17 @@ end
 christie = User.create(name: "Christie Clark", email: "christie.clark@hotmail.com", password: "123456", photo: "QS_0123.jpg", rank: nil)
 christie_leads = []
 8.times do
-  lead_name = Faker::Name.name
+  lead_name = Faker::Name.first_name
   email_name = lead_name.gsub!(/\s/, '.')
   christie_lead = Lead.new(
   name: lead_name,
   email: "#{email_name}@outlook.com",
-  phone: Faker::PhoneNumber.cell_phone,
+  phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
   html: html,
   user: christie,
-  source: "Heavy Equip Inc"
+  source: "Carbaba"
   )
   christie_lead.save!
   christie_leads << christie_lead
@@ -160,17 +160,17 @@ end
 john = User.create(name: "John Jones", email: "john.jones@hotmail.com", password: "123456", photo: "QS_0061.jpg", rank: nil)
 john_leads = []
 8.times do
-  lead_name = Faker::Name.name
+  lead_name = Faker::Name.first_name
   email_name = lead_name.gsub!(/\s/, '.')
   john_lead = Lead.new(
   name: lead_name,
   email: "#{email_name}@outlook.com",
-  phone: Faker::PhoneNumber.cell_phone,
+  phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
   html: html,
   user: john,
-  source: "Heavy Equip Inc"
+  source: "Car Kijiji"
   )
   john_lead.save!
   john_leads << john_lead
@@ -200,17 +200,17 @@ end
 jim = User.create(name: "Jim Krats", email: "jim.krats@hotmail.com", password: "123456", photo: "QS_0039.jpg", rank: nil)
 jim_leads = []
 8.times do
-  lead_name = Faker::Name.name
+  lead_name = Faker::Name.first_name
   email_name = lead_name.gsub!(/\s/, '.')
   jim_lead = Lead.new(
   name: lead_name,
   email: "#{email_name}@outlook.com",
-  phone: Faker::PhoneNumber.cell_phone,
+  phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
   html: html,
   user: jim,
-  source: "Heavy Equip Inc"
+  source: "Car Sales"
   )
   jim_lead.save!
   jim_leads << jim_lead
@@ -242,17 +242,17 @@ end
 chris = User.create(name: "Chris Columb", email: "chris.columb@hotmail.com", password: "123456", photo: "QS_0028.jpg", rank: nil)
 chris_leads = []
 8.times do
-  lead_name = Faker::Name.name
+  lead_name = Faker::Name.first_name
   email_name = lead_name.gsub!(/\s/, '.')
   chris_lead = Lead.new(
   name: lead_name,
   email: "#{email_name}@outlook.com",
-  phone: Faker::PhoneNumber.cell_phone,
+  phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
   html: html,
   user: chris,
-  source: "Heavy Equip Inc"
+  source: "Carbaba"
   )
   chris_lead.save!
   chris_leads << chris_lead
@@ -281,17 +281,17 @@ end
 nathan = User.create(name: "Nathan Bates", email: "nathan.bates@hotmail.com", password: "123456", photo: "Q_0008.jpg", rank: nil)
 nathan_leads = []
 8.times do
-  lead_name = Faker::Name.name
+  lead_name = Faker::Name.first_name
   email_name = lead_name.gsub!(/\s/, '.')
   nathan_lead = Lead.new(
   name: lead_name,
   email: "#{email_name}@outlook.com",
-  phone: Faker::PhoneNumber.cell_phone,
+  phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
   html: html,
   user: nathan,
-  source: "Heavy Equip Inc"
+  source: "Car Sales"
   )
   nathan_lead.save!
   nathan_leads << nathan_lead
@@ -317,17 +317,17 @@ end
 
 christopher = User.create(name: "Chris Hutchinson", email: "leadmailertest@gmail.com", password: "123456", photo: "chrissuit.jpg", rank: nil)
 2.times do
-  lead_name = Faker::Name.name
+  lead_name = Faker::Name.first_name
   email_name = lead_name.gsub!(/\s/, '.')
   christopher_lead = Lead.new(
   name: lead_name,
   email: "#{email_name}@outlook.com",
-  phone: Faker::PhoneNumber.cell_phone,
+  phone: ["(905)-681-1947", "(289)-468-2491", "(558)-467-7229"].sample,
   received_at: Time.now(),
   status: "pending",
   html: html,
   user: christopher,
-  source: "Car Kijiji"
+  source: "Carbaba"
   )
   christopher_lead.save!
 end
