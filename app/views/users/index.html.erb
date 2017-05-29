@@ -59,19 +59,17 @@
               </ul>
             <div class="next-lead-box">
               <%= image_tag("blue-icon.png", size: "30x18", alt: "Mail Icon") %>
-
-
-
+              <!--
+              Placing conditional here to fix site logic.
+              Entire site would crash when no users were on duty.
+              Will be expanding on this concept with an "unassigned user" to collect
+              all unassigned leads due to all team offline.
+              -->
               <% if Lineup.first.lineup.empty? %>
                 <h3><b>Warning: No staff on duty to receive leads</b></h3>
               <% else %>
                 <h3>The next lead will be forwarded to: <b><%= Lineup.first.lineup.first.name %></b></h3>
               <% end %>
-
-
-
-
-
             </div>
               <!-- Main table of employees -->
               <div class="scroll-me">
