@@ -10,8 +10,7 @@
       <li><%= link_to "STAFF", users_path, class: "nav-links #{set_users_active_button}", id: "staff-link" %> </li>
       <li><%= link_to "LEADS", leads_path, class: "nav-links #{set_leads_active_button}", id: "lead-link" %> </li>
       <!-- Need to add a 3rd hidden "storage" tab for when no users available (CH) -->
-      <li><% link_to "UNASSIGNED", users_path, class: "#", id: "storage-link" %></li>
-
+      <li><%= link_to "STORAGE", storage_path, class: "nav-links #", id: "storage-links" %></li>
 
     </ul>
   </div>
