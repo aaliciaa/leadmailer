@@ -9,4 +9,7 @@ class PagesController < ApplicationController
   @header_font = "Raleway"
   end
 
+  def storage
+  end
+
 end

@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   get 'simulate_email', to: 'leads#create_from_email'
   patch 'create_simulate_email', to: 'leads#create_new_from_email'
   get '/leads/:id/mark_as_accepted', to: 'leads#mark_as_accepted', as: 'accept_through_email'
+  get 'storage', to: 'pages#storage'
 
 end
