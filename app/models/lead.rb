@@ -7,6 +7,7 @@ class Lead < ApplicationRecord
   validates :phone, presence: true
   validates :source, presence: true
   validates :html, presence: true
+  validates :company, presence: true
   validates :status, inclusion: { in: ["pending","accepted","settled","lost"], allow_nil: false }
 
   def self.to_csv
