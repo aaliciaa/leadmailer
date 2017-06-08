@@ -1,4 +1,5 @@
 class Lead < ApplicationRecord
+  belongs_to :customer
   belongs_to :user, optional: true
 
   validates :name, presence: true
@@ -7,7 +8,7 @@ class Lead < ApplicationRecord
   validates :phone, presence: true
   validates :source, presence: true
   validates :html, presence: true
-  validates :company, presence: true
+  validates :customer, presence: true
   validates :status, inclusion: { in: ["pending","accepted","settled","lost"], allow_nil: false }
 
   def self.to_csv

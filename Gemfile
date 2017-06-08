@@ -20,6 +20,8 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem "font-awesome-rails"
 
+gem 'acts_as_list'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

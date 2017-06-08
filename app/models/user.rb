@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :leads
+  belongs_to :customer
 
   validates :name, presence: true, uniqueness: true
-  validates :company, presence: true
+  validates :customer, presence: true
 
 end

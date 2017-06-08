@@ -9,7 +9,9 @@ class CreateLeads < ActiveRecord::Migration[5.0]
       t.string :source
       t.string :phone
       t.float :response_time
+      t.text :html
       t.references :user
+      t.references :customer
 
       t.timestamps
     end
