@@ -20,6 +20,10 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem "font-awesome-rails"
 
+# For pagination of leads that are visible on a single page
+# (Maybe also users at a later date)
+gem 'will_paginate', '~> 3.1.0'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
