@@ -3,6 +3,7 @@ class LeadsController < ApplicationController
   # rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
+
     order_by = params[:order]
 
     if order_by
@@ -17,6 +18,9 @@ class LeadsController < ApplicationController
       format.html
       format.csv { send_data @leads.to_csv, filename: "leadmailer-leads-#{Date.today}.csv" }
     end
+
+    @leads = Lead.all
+    @leads = Lead.paginate(page: params[:page], per_page: 10)
   end
 
 
